@@ -1,0 +1,25 @@
+{
+  "name": "xky-blogs",
+  "version": "1.0.0",
+  "description": "a personal blogs for marking something deserve marking.",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vitepress dev docs --host",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "keywords": [],
+  "author": "xkyong",
+  "license": "ISC",
+  "devDependencies": {
+    "vitepress": "1.0.0-beta.6"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@algolia/client-search",
+        "search-insights"
+      ]
+    }
+  }
+}
