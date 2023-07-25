@@ -2,8 +2,6 @@
 
 基于 [vitepress](https://vitepress.dev/) 搭建而成！
 
-博客地址：https://xkyong.github.io/。
-
 
 
 ## 工程脚本
