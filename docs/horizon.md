@@ -32,4 +32,3 @@
 
 * [印记中国前端](https://docschina.org/)
 * [javascript明星项目](https://risingstars.js.org/2021/zh)
-* https://kangax.github.io/compat-table/es6/)
