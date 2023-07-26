@@ -15,6 +15,7 @@ export default defineConfig({
       {
         text: '2023',
         items: [
+          { text: '【翻译】CommonJS正在破坏JavaScript', link: '/2023/commonjs-is-hurting-javascript' },
           { text: '记一次浏览器跨域隔离探究实践', link: '/2023/browser-cross-origin-isolation' }
         ]
       }
