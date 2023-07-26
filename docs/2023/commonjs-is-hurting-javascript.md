@@ -74,9 +74,9 @@ Borins 是 Node "模块团队" 的开发人员之一，该团队的任务是在 
 
 ## 再见，感谢所有的`require`
 
-我们设想在未来，安装模块后，开发人员无需构建步骤就能在 Node.js 或浏览器中运行代码。
-
-— Myles Borins, [The Current State of Implementation and Planning for ESModules](https://medium.com/the-node-js-collection/the-current-state-of-implementation-and-planning-for-esmodules-a4ecb2aac07a) (2017)
+>  我们设想在未来，安装模块后，开发人员无需构建步骤就能在 Node.js 或浏览器中运行代码。
+>
+> — Myles Borins, [The Current State of Implementation and Planning for ESModules](https://medium.com/the-node-js-collection/the-current-state-of-implementation-and-planning-for-esmodules-a4ecb2aac07a) (2017)
 
 2009 年，CommonJS 正是 JavaScript 所需要的。该小组解决了一个棘手的问题，并强行通过了一个解决方案，该解决方案每天仍被使用数百万次。
 
