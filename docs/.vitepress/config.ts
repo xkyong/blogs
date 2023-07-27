@@ -13,10 +13,11 @@ export default defineConfig({
     ],
     sidebar: [
       {
-        text: '2023',
+        text: '2023年',
         items: [
           { text: '【翻译】CommonJS正在破坏JavaScript', link: '/2023/commonjs-is-hurting-javascript' },
-          { text: '记一次浏览器跨域隔离探究实践', link: '/2023/browser-cross-origin-isolation' }
+          { text: '记一次浏览器跨域隔离探究实践', link: '/2023/browser-cross-origin-isolation' },
+          { text: '唠唠 TypeScript 分布式条件类型与 infer 及应用', link: '/2023/ts-distributive-conditional-type-and-infer' }
         ]
       }
     ],
