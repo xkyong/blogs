@@ -340,7 +340,7 @@ type Res20 = FirstArrayStringItem<[12, 'kai', true]> // never
 type Res21 = FirstArrayStringItem<['kai', 23, true]> // "kai"
 ```
 
-而在 ts[@4.7 ]() 版本后，引入了 **infer 约束**功能来实现对特定类型地提取，因此上述的 `FirstArrayStringItem` 可简写为：
+而在 ts@4.7 版本后，引入了 **infer 约束**功能来实现对特定类型地提取，因此上述的 `FirstArrayStringItem` 可简写为：
 
 ```typescript
 type FirstArrayStringItem1<Arr extends any[]> = Arr extends [
