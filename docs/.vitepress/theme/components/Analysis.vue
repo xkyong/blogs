@@ -5,7 +5,7 @@
 import { ref } from 'vue'
 import axios from 'axios'
 
-const setVisitUrl = 'http://8.129.234.28:9090/blog/setVisit'
+const setVisitUrl = 'https://e4f011f364b0-15729517808414078489.ngrok-free.app/blog/setVisit'
 
 const count = ref(0)
 
