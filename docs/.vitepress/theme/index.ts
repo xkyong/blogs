@@ -6,14 +6,14 @@ import mediumZoom from 'medium-zoom'
 
 import './style.css'
 
-// import Analysis from './components/Analysis.vue'
+import Analysis from './components/Analysis.vue'
 
 export default {
   extends: Theme,
   Layout: () => {
     return h(Theme.Layout, null, {
       // https://vitepress.dev/guide/extending-default-theme#layout-slots
-      // 'nav-bar-content-before': () => h(Analysis)
+      'nav-bar-content-before': () => h(Analysis)
     })
   },
   enhanceApp({ app, router, siteData }) {

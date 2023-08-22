@@ -1,16 +1,7 @@
 <template>
-  <span style="font-size: 0.75rem; line-height: 1rem; padding: 0 0.5rem;">今日访问人数 {{ count }}</span>
+  <div style="display: flex; gap: 10px;">
+    <a href="https://xkyong.github.io/">
+      <img src="https://badges.pufler.dev/visits/xkyong/blog" alt="visit badge" data-canonical-src="https://xkyong.github.io/" style="max-width: 100%;">
+    </a>
+  </div>
 </template>
-<script setup lang="ts">
-import { ref } from 'vue'
-import axios from 'axios'
-
-const setVisitUrl = 'https://e4f011f364b0-15729517808414078489.ngrok-free.app/blog/setVisit'
-
-const count = ref(0)
-
-;(async () => {
-  const { data } = await axios.get(setVisitUrl)
-  count.value = data.data
-})()
-</script>
