@@ -5,6 +5,9 @@ export default defineConfig({
   title: "壹小楷的博客",
   description: "a personal blogs for marking something deserve marking.",
   themeConfig: {
+    search: {
+      provider: 'local'
+    },
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '首页', link: '/' },
