@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "a personal blogs for marking something deserve marking.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "docs:dev": "vitepress dev docs --host",
     "docs:build": "vitepress build docs",
@@ -11,9 +12,6 @@
   "keywords": [],
   "author": "xkyong",
   "license": "ISC",
-  "devDependencies": {
-    "vitepress": "1.0.0-beta.6"
-  },
   "pnpm": {
     "peerDependencyRules": {
       "ignoreMissing": [
@@ -26,6 +24,7 @@
     "@vueuse/core": "^10.2.1",
     "axios": "^1.4.0",
     "medium-zoom": "^1.0.8",
+    "vitepress": "1.0.0-rc.20",
     "vue": "^3.3.4"
   }
 }
