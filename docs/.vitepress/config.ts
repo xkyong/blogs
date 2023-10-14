@@ -18,8 +18,9 @@ export default defineConfig({
       {
         text: '2023年',
         items: [
-          { text: '【翻译】一篇理解Node.js事件循环的完整可视化指南', link: '/2023/visual-guide-to-nodejs-event-loop' },
-          { text: '【翻译】CommonJS正在破坏JavaScript', link: '/2023/commonjs-is-hurting-javascript' },
+          { text: '【翻译】TypeScript 中的 Array 类型', link: '/2023/array-types-in-typescript' },
+          { text: '【翻译】一篇理解 Node.js 事件循环的完整可视化指南', link: '/2023/visual-guide-to-nodejs-event-loop' },
+          { text: '【翻译】CommonJS 正在破坏 JavaScript', link: '/2023/commonjs-is-hurting-javascript' },
           { text: '记一次 Electron-vue 项目开发踩坑与问题解决', link: '/2023/electron-vue-trouble-and-resolution' },
           { text: '记一次浏览器跨域隔离探究实践', link: '/2023/browser-cross-origin-isolate-exploration' },
           { text: '唠唠 TypeScript 分布式条件类型与 infer 及应用', link: '/2023/ts-distributive-conditional-type-and-infer' },
