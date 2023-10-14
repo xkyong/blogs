@@ -10,9 +10,8 @@
 
 首先，我们复习一下 JavaScript 中的异步编程。虽然 JavaScript 在网络、移动和桌面应用程序中都有使用，但重要的是要记住JavaScript 最基本的形式，即**JavaScript是同步、阻塞、单线程的语言**。让我们通过一段简短的代码来理解这一点。
 
-```js
-// index.js
-
+::: code-group
+```js:line-numbers [index.js]
 function A() {
   console.log("A");
 }
@@ -26,6 +25,7 @@ B()
 
 // Logs A and then B
 ```
+::: 
 
 ### JavaScript是同步的
 
@@ -75,12 +75,15 @@ Node.js 运行时是一个可以在浏览器外使用和运行 JavaScript 程序
 
 首先，让我们来看看同步代码的执行。下面的代码由三个 console log 语句组成，一个接一个地打印 `First`、`Second` 和 `Third`。让我们以运行时执行代码的方式来查看代码。
 
-```js
-// index.js
+::: code-group
+
+```js:line-numbers [index.js]
 console.log("First");
 console.log("Second");
 console.log("Third");
 ```
+
+:::
 
 下面是同步代码执行在 Node 运行时的可视化表示。
 
