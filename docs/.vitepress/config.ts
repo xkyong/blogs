@@ -18,6 +18,7 @@ export default defineConfig({
       {
         text: '2023年',
         items: [
+          { text: '【翻译】TypeScript：停止使用 any 类型，一种特定场景下使用的类型', link: '/2023/typescript-stop-using-any' },
           { text: '【翻译】TypeScript 中的 Array 类型', link: '/2023/array-types-in-typescript' },
           { text: '【翻译】一篇理解 Node.js 事件循环的完整可视化指南', link: '/2023/visual-guide-to-nodejs-event-loop' },
           { text: '【翻译】CommonJS 正在破坏 JavaScript', link: '/2023/commonjs-is-hurting-javascript' },
