@@ -26,7 +26,7 @@ JavaScript 诞生约 15 年后，开始从浏览器扩展到服务器。越来�
 
 > 现在回过头来看，我觉得 CommonJS 的目标似乎是（或者至少应该是）发现 Node，并使我们在这里构建的一切成为可能。我们犯了一些错误，因为事后看来并没有朝着想要的方向发展，但总体而言，我认为整个 CommonJS 项目可以说是成功的。
 >
-> — Issac Schlueter, comment on [Breaking the CommonJS standardization impasse](https://github.com/nodejs/node-v0.x-archive/issues/5132#issuecomment-15503151) (2013)
+> — Issac Schlueter, 评论在 [Breaking the CommonJS standardization impasse](https://github.com/nodejs/node-v0.x-archive/issues/5132#issuecomment-15503151) (2013)
 
 尽管 CommonJS 是默认的模块系统，但它仍存在一些主要的问题：
 
@@ -38,9 +38,9 @@ JavaScript 诞生约 15 年后，开始从浏览器扩展到服务器。越来�
 
 ## 网络优先的ECMAScript模块
 
-随着 [ES6 语言规范](https://262.ecma-international.org/6.0/) 的发布，TC39 委员会终于在 JavaScript 语言中直接引入了模块系统。其目标是建立一个适用于网络的单一模块加载器系统，包括异步模块加载、浏览器兼容性、静态分析和tree shaking。
+随着 [ES6 语言规范](https://262.ecma-international.org/6.0/) 的发布，TC39 委员会终于在 JavaScript 语言中直接引入了模块系统。其目标是建立一个适用于网络的单一模块加载器系统，包括异步模块加载、浏览器兼容性、静态分析和 tree shaking。
 
-[ES 模块假定它们将通过网络而不是文件系统获取数据](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/)，从而提供更好的性能和用户体验。
+[ES modules 假定它们将通过网络而不是文件系统获取数据](https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/)，从而提供更好的性能和用户体验。
 
 既然模块加载系统已经内置于语言中，那么每个人都会同意使用该系统，这样我们就能将精力集中在更高层次、更重要的问题上，不是吗？
 
@@ -52,13 +52,13 @@ JavaScript 诞生约 15 年后，开始从浏览器扩展到服务器。越来�
 
 ## Node决定同时支持CJS和ESM
 
-> ES 模块和通用 JS 就像老海湾调味料和香草冰淇淋一样相得益彰。
+> ES Modules 和 CommonJS 就像老海湾调味料和香草冰淇淋一样相得益彰。
 >
-> — Myles Borins, from a talk on [Modules Modules Modules](https://www.youtube.com/watch?v=W5CXzo4TZVU)
+> — Myles Borins, 源自演讲 [Modules Modules Modules](https://www.youtube.com/watch?v=W5CXzo4TZVU)
 
 (我来自马里兰州，所以这听起来很不错）。
 
-Borins 是 Node "模块团队" 的开发人员之一，该团队的任务是在 Node 中实现 ES 模块。尽管该团队成功地将 ESM 添加到了 Node 中，但却未能就 ESM 与 CJS 之间的互操作性达成明确共识。然而，由于 CJS 已经深深嵌入了 Node，因此 Node 无法将其剥离。这意味着互操作性问题被推给了软件包作者。
+Borins 是 Node "模块团队" 的开发人员之一，该团队的任务是在 Node 中实现 ES Modules。尽管该团队成功地将 ESM 添加到了 Node 中，但却未能就 ESM 与 CJS 之间的互操作性达成明确共识。然而，由于 CJS 已经深深嵌入了 Node，因此 Node 无法将其剥离。这意味着互操作性问题被推给了软件包作者。
 
 下面是同时支持 ESM 和 CJS 的模块 `package.json` 的片段：
 
