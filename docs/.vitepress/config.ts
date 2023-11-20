@@ -18,6 +18,7 @@ export default defineConfig({
       {
         text: '2023年',
         items: [
+          // { text: '【翻译】浏览器不想让你知道的67个怪异调试技巧', link: '/2023/67-weird-debugging-tricks-your-browser-does-not-want-you-to-know'},
           { text: '【翻译】让开发人员生活更美好的 8 条建议', link: '/2023/my-8-tips-for-a-better-life-as-a-developer' },
           { text: '【翻译】TypeScript：停止使用 any 类型，一种特定场景下使用的类型', link: '/2023/typescript-stop-using-any' },
           { text: '【翻译】TypeScript 中的 Array 类型', link: '/2023/array-types-in-typescript' },
