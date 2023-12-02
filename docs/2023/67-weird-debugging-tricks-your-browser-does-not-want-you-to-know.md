@@ -40,7 +40,7 @@
 
 通过使用对程序行为有副作用的表达式，我们可以在浏览器中即时更改程序行为。
 
-例如，你可以覆盖 `getPerson` 函数的参数 `id`。 由于 `id=1` 的值为 true，这个条件断点会暂停调试器。为避免这种情况，请在表达式中添加 `，false`。
+例如，你可以覆盖 `getPerson` 函数的参数 `id`。 由于 `id=1` 的值为 true，这个条件断点会暂停调试器。为避免这种情况，请在表达式中添加 `,false`。
 
 ![](img/67-weird-debugging-tricks-your-browser-does-not-want-you-to-know/conditional-breakpoint-parameter-override.gif)
 
@@ -88,7 +88,7 @@
 
 #### 跳过 N 秒
 
-如果在接下来的 5 秒内遇到断点，则不暂停执行，而是在之后的任何时间暂停： `window.baseline = window.baseline || Date.now()`，`(Date.now() - window.baseline) > 5000`。
+如果在接下来的 5 秒内遇到断点，则不暂停执行，而是在之后的任何时间暂停： `window.baseline = window.baseline || Date.now(), (Date.now() - window.baseline) > 5000`。
 
 如果想随时在控制台中重置计数器，你只需要执行：`window.baseline = Date.now()`。
 
@@ -100,7 +100,7 @@
 
 ### 只在偶数次调用
 
-间隔一行执行时，才暂停一次： `window.counter = window.counter || 0`，`window.counter % 2 === 0`。
+间隔一行执行时，才暂停一次： `window.counter = window.counter || 0, window.counter % 2 === 0`。
 
 
 
@@ -216,7 +216,7 @@ function fn() {
 }
 ```
 
-源自你的浏览器控制台：
+来自你的浏览器控制台：
 
 ```js
 > debugger; fn(1);
