@@ -2,8 +2,8 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "壹小楷的博客",
-  description: "a personal blogs for marking something deserve marking.",
+  title: '壹小楷的博客',
+  description: 'a personal blog for marking something deserve marking.',
   themeConfig: {
     search: {
       provider: 'local'
