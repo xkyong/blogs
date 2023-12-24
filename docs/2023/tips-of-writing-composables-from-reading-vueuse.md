@@ -249,11 +249,11 @@ const title = useTitle(() => 'testTitle')
 
 这里要注意一点的时，当使用如上第3种方式时，返回的 `title` 是 `ComputedRef<string>` 类型，该类型是 `Ref<string>` 的子类型，也对应了上边函数重载签名1：
 
-![image-20231223221202546](img/tips-of-writing-Composables-from-reading-vueuse/image-20231223221202546.png)
+![image-20231223221202546](img/tips-of-writing-composables-from-reading-vueuse/image-20231223221202546.png)
 
-![image-20231223220910029](img/tips-of-writing-Composables-from-reading-vueuse/image-20231223220910029.png)
+![image-20231223220910029](img/tips-of-writing-composables-from-reading-vueuse/image-20231223220910029.png)
 
-![image-20231223221450143](img/tips-of-writing-Composables-from-reading-vueuse/image-20231223221450143.png)
+![image-20231223221450143](img/tips-of-writing-composables-from-reading-vueuse/image-20231223221450143.png)
 
 VueUse 中也有大量的 Composable 函数用到了该技巧，对其他函数感兴趣的，建议自己去翻阅看看！
 
@@ -291,7 +291,7 @@ export function useFetch<T>(url: MaybeRef<string>) {
 
 这里有个使用🌰️，代码放在 [Vue SFC Playground](https://play.vuejs.org/#eNp9U01v2zAM/SuCLnaAwMbWW+Aa2IYM2IB9oMtRF1emY3eKZEhUliLzfx8l1W6CBT34g3yP5KP8fOYfxrE4euAbXjlphxGZA/RjLfRwGI1FdmbewWdA2bOJddYcWFaU0hDomkcFrkCXCS20NNoFdttgs2ZgrbFUcL9U51mPOLpNWT45o0fVSOiNasEW+DwO0rRQUNcSTWtc+T5bCV2VSRFpoQDhQEUIFDFW9e/qMGjDzmkim6aqpOQMxvkRfVEyw1V50YivOToS3g37IqiiUziHDoKHBQcF9seIAy0mOPUKSMAapcyfrzGH1sN6zsse5O8b+Sd3CjnBf1pwYI8g+IJhY/eACd7++g4nel/Ag2m9IvYb4AM4o3zQmGgfvW5J9gUvqv0Sv+Wg9zu3PSFoNy8VhAbmFPmCkxU+vbH6q9y74i7WCT3RKV77gY5xMY/ro4AH6NbMawvd4iIalQm7+IxcAMT/1jw/0lb/08IFp0jtvJZB2+Ktalfn3qrNUl05tLRtvSLpVMdYcmd0yv2FpmrH/pKsFrpBQ1vnq0t2cs4VfRtTt0rSvYtOj3sGQasXkLECe9A5dauZjVbLb2JBYHFslAeaa18Zsgl9KVknVQsHrsZb+nWtnndm6V+cg1iYgik8Jj79A564WTI=) 上：
 
-![image-20231223231532535](img/tips-of-writing-Composables-from-reading-vueuse/image-20231223231532535.png)
+![image-20231223231532535](img/tips-of-writing-composables-from-reading-vueuse/image-20231223231532535.png)
 
 使用该技巧的，还有如下几个函数，感兴趣可以看看：
 
@@ -399,15 +399,15 @@ $ pnpm dev
 
 浏览器访问 `http://localhost:5173/` ，可以看到：
 
-![image-20231217101732564](img/tips-of-writing-Composables-from-reading-vueuse/image-20231217101732564.png)
+![image-20231217101732564](img/tips-of-writing-composables-from-reading-vueuse/image-20231217101732564.png)
 
 进入 `Sources` 面板，在如下位置打个断点，然后刷新页面：
 
-![image-20231217101521173](img/tips-of-writing-Composables-from-reading-vueuse/image-20231217101521173.png)
+![image-20231217101521173](img/tips-of-writing-composables-from-reading-vueuse/image-20231217101521173.png)
 
 然后敲击 `F11` 键就可以进入 Composable 函数（这里是 `useMouse`）的源代码中了：
 
-![image-20231217101603188](img/tips-of-writing-Composables-from-reading-vueuse/image-20231217101603188.png)
+![image-20231217101603188](img/tips-of-writing-composables-from-reading-vueuse/image-20231217101603188.png)
 
 之后就可以进行愉快地调试了。
 
