@@ -1,18 +1,18 @@
-# 唠唠我从 VueUse 源码中学到的 composable 函数编写技巧
+# 唠唠我从 VueUse 源码中学到的 Composable 函数编写技巧
 
 ## （一）前言
 
 Vue 3 版本中引入了组合式 API (Composition API) ，使我们可以使用函数的方式来组织 Vue 组件代码逻辑。相较于选项式 API (Option API)，组合式 API 的写法带来的好处是比较明显的，因此，目前自己在 Vue 项目（`Vue >= 2.7` 或者 `Vue@3`）中基本都是用组合式 API 来编写代码。
 
-也是因为使用的比较多，在使用组合式 API 编写 composable 函数的过程中，难免会思考如何才能把函数写得更优雅，如何才能保障良好的封装性和代码可读性，因此在网上试着找了下，恰好看到社区 [antfu 大佬](https://github.com/antfu) 搞了个 [VueUse](https://vueuse.org/) 库，里边有一系列基于 Composition API 编写的工具函数，不管是仓库的文件组织，还是工具函数的源码实现，甚至于一些 TypeScript 的类型编程实现，都值得我们的学习和借鉴。
+也是因为使用的比较多，在使用组合式 API 编写 Composable 函数的过程中，难免会思考如何才能把函数写得更优雅，如何才能保障良好的封装性和代码可读性，因此在网上试着找了下，恰好看到社区 [antfu 大佬](https://github.com/antfu) 搞了个 [VueUse](https://vueuse.org/) 库，里边有一系列基于 Composition API 编写的工具函数，不管是仓库的文件组织，还是工具函数的源码实现，甚至于一些 TypeScript 的类型编程实现，都值得我们的学习和借鉴。
 
-这段时间，在公司实际业务项目中用了 VueUse 一段时间后，自己花了点时间阅读了 VueUse 库底层的源码实现，学到了不少 composable 函数的编写技巧，我做了下整理，因此，就有了这篇文章。
+这段时间，在公司实际业务项目中用了 VueUse 一段时间后，自己花了点时间阅读了 VueUse 库底层的源码实现，学到了不少 Composable 函数的编写技巧，我做了下整理，因此，就有了这篇文章。
 
 ## （二）编写技巧
 
 ### 技巧1：使用可选 `options` 对象参数
 
-实际编写  composable 函数时，对于必须传入的参数，可以占据1个单独的形参位置，否则的话，可以作为可选 `options` 对象参数的属性传入，进而提高 composable 函数的可配置性。
+实际编写  Composable 函数时，对于必须传入的参数，可以占据1个单独的形参位置，否则的话，可以作为可选 `options` 对象参数的属性传入，进而提高 Composable 函数的可配置性。
 
 实际使用该 `options` 对象时，可解构该对象，然后给属性设置必要的默认值。
 
@@ -124,13 +124,13 @@ const { x, y, sourceType } = useMouse()
 const { x, y, sourceType } = useMouse({ touch: false })
 ```
 
-VueUse 中有大量的 composable 函数用到了该技巧，对其他函数感兴趣的，建议自己去翻阅看看！
+VueUse 中有大量的 Composable 函数用到了该技巧，对其他函数感兴趣的，建议自己去翻阅看看！
 
 
 
 ### 技巧2：使用 `ref` 或 `unref` 处理传入的参数
 
-当接收到用户传入的参数且需要兼容多种参数类型时，composable 函数内部可以使用 `ref` 或者 `unref` 函数对参数进行处理，以提高参数使用的灵活性。
+当接收到用户传入的参数且需要兼容多种参数类型时，Composable 函数内部可以使用 `ref` 或者 `unref` 函数对参数进行处理，以提高参数使用的灵活性。
 
 在举🌰️前，先说明一个点，那就是如果将⼀个 ` Ref` 值传递给 ` ref()` 函数，它将会原样将其返回：
 
@@ -171,7 +171,7 @@ function useBala<T>(arg: MaybeRef<T>) {
 }
 ```
 
-ok，接下来举个实际 composable 函数的🌰️来讲，这里还是以 [VueUse-useTitle](https://github.com/vueuse/vueuse/blob/main/packages/core/useTitle/index.ts) 为例，涉及的代码片段：
+ok，接下来举个实际 Composable 函数的🌰️来讲，这里还是以 [VueUse-useTitle](https://github.com/vueuse/vueuse/blob/main/packages/core/useTitle/index.ts) 为例，涉及的代码片段：
 
 ```ts
 // 重载签名1
@@ -249,19 +249,19 @@ const title = useTitle(() => 'testTitle')
 
 这里要注意一点的时，当使用如上第3种方式时，返回的 `title` 是 `ComputedRef<string>` 类型，该类型是 `Ref<string>` 的子类型，也对应了上边函数重载签名1：
 
-![image-20231223221202546](img/tips-of-writing-composables-from-reading-vueuse/image-20231223221202546.png)
+![image-20231223221202546](img/tips-of-writing-Composables-from-reading-vueuse/image-20231223221202546.png)
 
-![image-20231223220910029](img/tips-of-writing-composables-from-reading-vueuse/image-20231223220910029.png)
+![image-20231223220910029](img/tips-of-writing-Composables-from-reading-vueuse/image-20231223220910029.png)
 
-![image-20231223221450143](img/tips-of-writing-composables-from-reading-vueuse/image-20231223221450143.png)
+![image-20231223221450143](img/tips-of-writing-Composables-from-reading-vueuse/image-20231223221450143.png)
 
-VueUse 中也有大量的 composable 函数用到了该技巧，对其他函数感兴趣的，建议自己去翻阅看看！
+VueUse 中也有大量的 Composable 函数用到了该技巧，对其他函数感兴趣的，建议自己去翻阅看看！
 
 
 
 ### 技巧3：响应式处理异步代码
 
-利用 Vue 提供的响应式系统，在不阻塞 `setup` 函数执行的情况下，安全可靠地编写涉及异步代码的 composable 函数，尽管 Vue 提供了一个用以配合处理 `async setup()` 代码的实验性内置组件：[Suspense](https://cn.vuejs.org/guide/built-ins/suspense.html)。
+利用 Vue 提供的响应式系统，在不阻塞 `setup` 函数执行的情况下，安全可靠地编写涉及异步代码的 Composable 函数，尽管 Vue 提供了一个用以配合处理 `async setup()` 代码的实验性内置组件：[Suspense](https://cn.vuejs.org/guide/built-ins/suspense.html)。
 
 处理核心是先建立数据间的“连结” ，然后再等待异步请求返回将数据填充。
 
@@ -291,7 +291,7 @@ export function useFetch<T>(url: MaybeRef<string>) {
 
 这里有个使用🌰️，代码放在 [Vue SFC Playground](https://play.vuejs.org/#eNp9U01v2zAM/SuCLnaAwMbWW+Aa2IYM2IB9oMtRF1emY3eKZEhUliLzfx8l1W6CBT34g3yP5KP8fOYfxrE4euAbXjlphxGZA/RjLfRwGI1FdmbewWdA2bOJddYcWFaU0hDomkcFrkCXCS20NNoFdttgs2ZgrbFUcL9U51mPOLpNWT45o0fVSOiNasEW+DwO0rRQUNcSTWtc+T5bCV2VSRFpoQDhQEUIFDFW9e/qMGjDzmkim6aqpOQMxvkRfVEyw1V50YivOToS3g37IqiiUziHDoKHBQcF9seIAy0mOPUKSMAapcyfrzGH1sN6zsse5O8b+Sd3CjnBf1pwYI8g+IJhY/eACd7++g4nel/Ag2m9IvYb4AM4o3zQmGgfvW5J9gUvqv0Sv+Wg9zu3PSFoNy8VhAbmFPmCkxU+vbH6q9y74i7WCT3RKV77gY5xMY/ro4AH6NbMawvd4iIalQm7+IxcAMT/1jw/0lb/08IFp0jtvJZB2+Ktalfn3qrNUl05tLRtvSLpVMdYcmd0yv2FpmrH/pKsFrpBQ1vnq0t2cs4VfRtTt0rSvYtOj3sGQasXkLECe9A5dauZjVbLb2JBYHFslAeaa18Zsgl9KVknVQsHrsZb+nWtnndm6V+cg1iYgik8Jj79A564WTI=) 上：
 
-![image-20231223231532535](img/tips-of-writing-composables-from-reading-vueuse/image-20231223231532535.png)
+![image-20231223231532535](img/tips-of-writing-Composables-from-reading-vueuse/image-20231223231532535.png)
 
 使用该技巧的，还有如下几个函数，感兴趣可以看看：
 
@@ -303,7 +303,7 @@ export function useFetch<T>(url: MaybeRef<string>) {
 
 ### 技巧4：动态输出函数返回值
 
-composable 函数可以动态输出函数返回值，默认情况下可以只输出一个值，当用户需要对输出值有更细粒度的控制时，可以给 `options` 对象参数设置某个标识属性（VueUse 中是 `controls` 属性），然后输出包含该值的对象，同时该对象还有输出值的操作函数。
+Composable 函数可以动态输出函数返回值，默认情况下可以只输出一个值，当用户需要对输出值有更细粒度的控制时，可以给 `options` 对象参数设置某个标识属性（VueUse 中是 `controls` 属性），然后输出包含该值的对象，同时该对象还有输出值的操作函数。
 
 以 `useNow` 函数为🌰️，源代码在这：[VueUse-useNow](https://github.com/vueuse/vueuse/blob/main/packages/core/useNow/index.ts)，下边只列出涉及的代码片段：
 
@@ -347,7 +347,7 @@ export function useNow(options: UseNowOptions<boolean> = {}) {
 }
 ```
 
-可以看到，`useNow` 接受一个可选的 `options` 对象参数，当 `options.controls` 为 `false` 时，只会输出 `now` 值；当 `options.controls` 为 `true` 时，会输出一个对象，该对象除了 `now` 属性外，还包含 `pause` 和 `resume` 这2个操作函数，`pause` 函数可以暂停 `now` 时间值变化，而 `resume` 函数则可以恢复 `now` 时间值变化。
+可以看到，`useNow` 接受一个可选的 `options` 对象参数，当 `options.controls` 不传或者为 `false` 时，只会输出 `now` 值；当 `options.controls` 为 `true` 时，会输出一个对象，该对象除了 `now` 属性外，还包含 `pause` 和 `resume` 这2个操作函数，`pause` 函数可以暂停 `now` 时间值变化，而 `resume` 函数则可以恢复 `now` 时间值变化。
 
 因此，我们可以如下使用：
 
@@ -373,7 +373,7 @@ const { now, pause, resume } = useNow({ controls: true })
 
 ### VueUse 源码调试
 
-为了更好地了解 VueUse 底层 composable 函数的执行细节，单单只阅读源代码应该是不太够的，必要的代码调试还是需要的。
+为了更好地了解 VueUse 底层 Composable 函数的执行细节，单单只阅读源代码应该是不太够的，必要的代码调试还是需要的。
 
 而如何对 VueUse 源码进行调试，这里也给出操作步骤。
 
@@ -399,23 +399,23 @@ $ pnpm dev
 
 浏览器访问 `http://localhost:5173/` ，可以看到：
 
-![image-20231217101732564](img/tips-of-writing-composables-from-reading-vueuse/image-20231217101732564.png)
+![image-20231217101732564](img/tips-of-writing-Composables-from-reading-vueuse/image-20231217101732564.png)
 
 进入 `Sources` 面板，在如下位置打个断点，然后刷新页面：
 
-![image-20231217101521173](img/tips-of-writing-composables-from-reading-vueuse/image-20231217101521173.png)
+![image-20231217101521173](img/tips-of-writing-Composables-from-reading-vueuse/image-20231217101521173.png)
 
-然后敲击 `F11` 键就可以进入 composable 函数（这里是 `useMouse`）的源代码中了：
+然后敲击 `F11` 键就可以进入 Composable 函数（这里是 `useMouse`）的源代码中了：
 
-![image-20231217101603188](img/tips-of-writing-composables-from-reading-vueuse/image-20231217101603188.png)
+![image-20231217101603188](img/tips-of-writing-Composables-from-reading-vueuse/image-20231217101603188.png)
 
 之后就可以进行愉快地调试了。
 
 ### 单元测试用例参照
 
-不得不说的一点的是，VueUse 底层针对每个 composable 函数都做了很全面的单元测试，确保了函数能够按照预期进行工作。
+不得不说的一点是，VueUse 底层针对每个 Composable 函数都做了很全面的单元测试，确保了函数能够按照预期进行工作。
 
-VueUse 底层的单元测试用例是通过 [Vitest](https://vitest.dev/) 测试框架编写的，如果自己项目中想基于 Vitest 来编写测试用例，或者想学习如何编写测试用例，VueUse 也是一个很好的借鉴和学习仓库。
+VueUse 底层的单元测试用例是通过 [Vitest](https://Vitest.dev/) 测试框架编写的，如果自己项目中想基于 Vitest 来编写测试用例，或者想学习如何编写测试用例，VueUse 也是一个很好的借鉴和学习仓库。
 
 当然，如果没写过单元测试，可以先看看阮一峰大神之前写过的这篇文章：[测试框架 Mocha 实例教程](https://www.ruanyifeng.com/blog/2015/12/a-mocha-tutorial-of-examples.html)，学习完一些理论知识后，结合实践，学得会更多，更快！
 
@@ -423,14 +423,14 @@ VueUse 底层的单元测试用例是通过 [Vitest](https://vitest.dev/) 测试
 
 ## （三）总结
 
-本文基于自己阅读 VueUse 库底层源码的实践，整理输出了4大编写 composable 函数的编写技巧：
+本文基于自己阅读 VueUse 库底层源码的实践，整理输出了4大编写 Composable 函数的编写技巧：
 
 - 使用可选 `options` 对象参数
 - 使用 `ref` 或 `unref` 处理传入的参数
 - 响应式处理异步代码
 - 动态输出函数返回值
 
-另外，还提到了VueUse 源码调试方法，vitest 单元测试用例参照等其他跟 VueUse 相关的内容。
+另外，还提到了 VueUse 源码调试方法，Vitest 单元测试用例参照等其他跟 VueUse 相关的内容。
 
 除了上边讲到的这些技巧外，VueUse 官方文档有一节关于编写 Composable 函数的指南，内容可作为补充，这里也把链接列下：[VueUse-Guidelines](https://vueuse.org/guidelines.html)。
 
@@ -440,8 +440,8 @@ Happy Coding!
 
 ## （四）参考资料
 
-- [Vue.js官方文档-组合式函数](https://cn.vuejs.org/guide/reusability/composables.html)
-- [Coding Better Composables (Series)](https://michaelnthiessen.com/coding-better-composables/)
-- [可组合的 Vue - Anthony Fu](https://antfu.me/posts/composable-vue-vueconf-china-2021)
+- [Vue.js官方文档-组合式函数](https://cn.vuejs.org/guide/reusability/Composables.html)
+- [Coding Better Composables (Series)](https://michaelnthiessen.com/coding-better-Composables/)
+- [可组合的 Vue - Anthony Fu](https://antfu.me/posts/Composable-vue-vueconf-china-2021)
 - [VueUse-Best Practice](https://vueuse.org/guide/best-practice.html)
 - [VueUse-Guidelines](https://vueuse.org/guidelines.html)
