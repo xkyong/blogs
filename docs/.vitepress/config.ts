@@ -4,6 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: '壹小楷的博客',
   description: 'a personal blog for marking something deserve marking.',
+  appearance: false,
   themeConfig: {
     search: {
       provider: 'local'

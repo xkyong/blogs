@@ -7,13 +7,15 @@ import mediumZoom from 'medium-zoom'
 import './style.css'
 
 import Analysis from './components/Analysis.vue'
+import VPSwitchAppearance from './components/VPSwitchAppearance.vue'
 
 export default {
   extends: Theme,
   Layout: () => {
     return h(Theme.Layout, null, {
       // https://vitepress.dev/guide/extending-default-theme#layout-slots
-      'nav-bar-content-before': () => h(Analysis)
+      'nav-bar-content-before': () => h(Analysis),
+      'nav-bar-content-after': () => h(VPSwitchAppearance)
     })
   },
   enhanceApp({ app, router, siteData }) {
