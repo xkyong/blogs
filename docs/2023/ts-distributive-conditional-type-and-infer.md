@@ -2,11 +2,11 @@
 
 ## （一）前言
 
-想必大家或多或少都听过TypeScript，而且应该也写过TypeScript代码。
+想必大家或多或少都听过 TypeScript，而且应该也写过 TypeScript 代码。
 
-不过可能来讲，在业务代码中用到的TypeScript的东西不会很多，更别说TypeScript类型编程了。
+不过可能来讲，在业务代码中用到的 TypeScript 的东西不会很多，更别说 TypeScript 类型编程了。
 
-我个人除了在业务代码中编写TypeScript代码外，更多还是想在TypeScript的类型编程上持续学习。
+我个人除了在业务代码中编写 TypeScript 代码外，更多还是想在 TypeScript 的类型编程上持续学习。
 
 而本文，更多是对自己阶段学习成果的整理输出，也希望文中提到的一些思路能够给大家些借鉴。
 
@@ -219,7 +219,7 @@ type Res3 = ExtractFuncReturnType<() => number> // number
 
 对于上述例子，当传入的类型参数满足 `T extends (...args: any[]) => infer R` 这样一个结构（不用管 `infer R`，当它是 any 就行）时，会返回 `infer R` 位置的值，即 R。否则，返回 never。
 
-`infer`是 `inference` 的缩写，意为推断，如 `infer R` 中 `R` 就表示 **待推断的类型**。
+`infer` 是 `inference` 的缩写，意为推断，如 `infer R` 中 `R` 就表示 **待推断的类型**。
 
 `infer` 只能在**条件类型**中使用，因为我们实际上仍然需要**类型结构是一致的**，比如上例中类型信息需要是一个函数类型结构，我们才能提取出它的返回值类型。如果连函数类型都不是，那只会返回 never 。
 
@@ -233,7 +233,7 @@ type MyType<T> = T extends string ? (infer U)[] : never; // Error
 
 ![image-20230727215523004](img/ts-distributive-conditional-type-and-infer/image-20230727215523004.png)
 
-类型结构除了可以是函数类型外，还可以是其他的，比如数组类型，甚至于是Promise，来看例子：
+类型结构除了可以是函数类型外，还可以是其他的，比如数组类型，甚至于是 Promise，来看例子：
 
 比如我想提取出数组中首尾2个元素的类型，可以如下写：
 
@@ -265,7 +265,7 @@ type Res6 = ExtractPromiseResolveType<Promise<undefined>> // undefined
 
 ### 2. infer的一些案例应用
 
-案例1：实现TypeScript内置工具类型 `Parameters` 和 `ReturnType`：
+案例1：实现 TypeScript 内置工具类型 `Parameters` 和 `ReturnType`：
 
 ```typescript
 type FuncType = (...args: any[]) => any
@@ -277,7 +277,7 @@ type Res10 = MyParameters<(name: string, age: number) => string> // [name: strin
 type Res11 = MyReturnType<(name: string, age: number) => string> // string
 ```
 
-案例2：`KebabCase` 形式字符串转换为 `CamelCase`形式字符串，比如`hello-world-kai` 转换为 `helloWorldKai`：
+案例2：`KebabCase` 形式字符串转换为 `CamelCase` 形式字符串，比如 `hello-world-kai` 转换为  `helloWorldKai`：
 
 ```typescript
 type CamelCase<S extends string> = S extends `${infer L}-${infer R}`
@@ -287,7 +287,7 @@ type CamelCase<S extends string> = S extends `${infer L}-${infer R}`
 type Res12 = CamelCase<'hello-world-kai'> // "helloWorldKai"
 ```
 
-因为 `KebabCase` 形式字符串可能存在多个`-`连接字符，因此这里还递归调用了 `CamelCase`。
+因为 `KebabCase` 形式字符串可能存在多个 `-` 连接字符，因此这里还递归调用了 `CamelCase`。
 
 案例3：提取出数组的元素类型：
 
@@ -354,7 +354,7 @@ type Res22 = FirstArrayStringItem<[12, 'kai', true]> // never
 type Res23 = FirstArrayStringItem<['kai', 23, true]> // "kai"
 ```
 
-案例6：深层提取出Promise中resolve值的类型
+案例6：深层提取出 Promise 中 resolve 值的类型
 
 ```typescript
 type DeepExtractPromiseResolveType<T> = T extends Promise<infer R> ? DeepExtractPromiseResolveType<R> : T
@@ -370,11 +370,11 @@ type Res26 = DeepExtractPromiseResolveType<Promise<Promise<Promise<true>>>> // t
 
 ## （四）总结
 
-本文结合一些示例介绍了条件类型、分布式条件类型和`infer`关键字的相关内容，也给出了一些工具类型实现，希望对大家有点帮助！
+本文结合一些示例介绍了条件类型、分布式条件类型和 `infer` 关键字的相关内容，也给出了一些工具类型实现，希望对大家有点帮助！
 
-另外，基于条件类型和`infer`可以衍生出很多的类型编程写法，`infer` 关键字是类型编程**模式匹配**范式必不可少的工具，更多的内容感兴趣地可以自己去探索探索。
+另外，基于条件类型和 `infer` 可以衍生出很多的类型编程写法，`infer` 关键字是类型编程**模式匹配**范式必不可少的工具，更多的内容感兴趣地可以自己去探索探索。
 
-最后，给大家推荐个github仓库，是antfu搞的TypeScript类型编程练习仓库：[type-challenges](https://github.com/type-challenges/type-challenges)，感兴趣可以练练看～
+最后，给大家推荐个 Github仓库，是 antfu 搞的 TypeScript 类型编程练习仓库：[type-challenges](https://github.com/type-challenges/type-challenges)，感兴趣可以练练看～
 
 欢迎各位大佬勘误～
 

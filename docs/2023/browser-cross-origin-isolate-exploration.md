@@ -4,9 +4,9 @@
 
 前阵子，在一个微信公众号项目的业务开发过程中，用到了微信的 [JS-SDK](https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html) 和其他第三方脚本资源，本地开发联调比较顺利，没什么问题。不过，在将成果物部署到线上测试服务器时，我人懵了。
 
-涉及的JS-SDK和其他第三方脚本资源请求均失败了，涉及业务功能均无法正常使用，影响交付，因此需要尽快排查定位解决该问题。
+涉及的 JS-SDK 和其他第三方脚本资源请求均失败了，涉及业务功能均无法正常使用，影响交付，因此需要尽快排查定位解决该问题。
 
-基于一个个猜测和验证，最终定位问题是由于服务端开启了 **跨域隔离** 导致的，修改Nginx配置解决了这个问题，也因此成果物在项目结项前及时得以交付。在此期间，也找了不少关于跨域隔离的资料，借此打算写篇文章记录下涉及 **跨域隔离** 的概念和做些代码实践。
+基于一个个猜测和验证，最终定位问题是由于服务端开启了 **跨域隔离** 导致的，修改 Nginx 配置解决了这个问题，也因此成果物在项目结项前及时得以交付。在此期间，也找了不少关于跨域隔离的资料，借此打算写篇文章记录下涉及 **跨域隔离** 的概念和做些代码实践。
 
 
 
@@ -66,7 +66,7 @@ Cross-Origin-Opener-Policy: same-origin
 
 ### 4. 如何减轻跨域隔离的影响？
 
-开启跨域隔离之后，跨域的图像、脚本和iframe等跨域资源是无法正常加载的，因此需要一些解决方案来减轻开启跨域隔离之后带来的影响。
+开启跨域隔离之后，跨域的图像、脚本和 iframe 等跨域资源是无法正常加载的，因此需要一些解决方案来减轻开启跨域隔离之后带来的影响。
 
 这里，我直接引用文章 [跨域隔离的启用指南](https://web.dev/cross-origin-isolation-guide/) 给出的解决方案内容，即在确定哪些资源将受到跨域隔离的影响后，以下是有关如何实际让这些跨域资源选择加入的一般细则：
 
@@ -273,7 +273,7 @@ app.listen(8999, () => {
 
 ![](img/browser-cross-origin-isolate-exploration/image-20230228173025860.png)
 
-此时 `console` 面板输入 `self.crossOriginIsolated` 看到的结果就是 `true`了，因跨域隔离的存在，页面上跨域的资源请求（`<img>` 和 vconsole 的 `<script>`）以及 iframe 请求均失败了。
+此时 `console` 面板输入 `self.crossOriginIsolated` 看到的结果就是 `true` 了，因跨域隔离的存在，页面上跨域的资源请求（`<img>` 和 vconsole 的 `<script>`）以及 iframe 请求均失败了。
 
 ok，接下来演示如何解决这些由于跨域隔离导致的问题。
 
@@ -304,7 +304,7 @@ app.use(async (ctx, next) => {
 
 ![](img/browser-cross-origin-isolate-exploration/image-20230228173835392.png)
 
-图片和vconsole的脚本资源请求成功了，不过 `iframe` 的还是不行。
+图片和 vconsole 的脚本资源请求成功了，不过 `iframe` 的还是不行。
 
 顺着细则列表，我们还能看到：
 
@@ -340,11 +340,11 @@ iframe也能出来了。
 
 下边再补充2点。
 
-首先，如果只是请求跨域资源（如图片、脚本、样式表等等）且这些资源响应头中设置了`Access-Control-Allow-Origin`，而不涉及iframe请求加载，那么，我们可以按照如下细则：
+首先，如果只是请求跨域资源（如图片、脚本、样式表等等）且这些资源响应头中设置了`Access-Control-Allow-Origin`，而不涉及 iframe 请求加载，那么，我们可以按照如下细则：
 
 > 细则2：如果资源是用 CORS（例如，`<img src="example.jpg" crossorigin>`）提供的，那么请在顶级文档的 HTML 标签中设置 `crossorigin`。
 
-即在我们的页面中，给对应的资源 html 标签添加 `crossorigin` 属性，即可实现在跨域隔离状态下加载获取这些资源，而不需要给第三方服务设置coep和coop：
+即在我们的页面中，给对应的资源 html 标签添加 `crossorigin` 属性，即可实现在跨域隔离状态下加载获取这些资源，而不需要给第三方服务设置 coep 和 coop：
 
 ```html
 <img class="avatar" src="http://127.0.0.1:3000/coi/assets/avatar.jpg" alt="头像" crossorigin>
@@ -352,14 +352,14 @@ iframe也能出来了。
 <script src="http://127.0.0.1:3000/coi/assets/vconsole.min.js" crossorigin></script>
 ```
 
-其次，如果项目某个子路径（比如demo源码中的 `/sub/`）不需要开启跨域隔离，那可以将coep和coop响应头修改为：
+其次，如果项目某个子路径（比如demo源码中的 `/sub/`）不需要开启跨域隔离，那可以将 coep 和coop 响应头修改为：
 
 ```http
 Cross-Origin-Embedder-Policy: unsafe-none
 Cross-Origin-Opener-Policy: unsafe-none
 ```
 
-在koa后台代码中（`src/server-a/main.js`）是如下设置的：
+在 koa 后台代码中（`src/server-a/main.js`）是如下设置的：
 
 ```javascript
 // 省略...
@@ -389,7 +389,7 @@ app.use(async (ctx, next) => {
 
 ### 2. Nginx
 
-nginx的设置其实跟koa的设置思路是差不多的，因此，这部分就不再展开叙述。
+nginx 的设置其实跟 koa 的设置思路是差不多的，因此，这部分就不再展开叙述。
 
 这里直接给出 `conf/nginx.conf` 文件中的配置：
 
@@ -470,11 +470,11 @@ http {
 
 好了，写完了。
 
-本文侧重从实际代码demo层面带领大家了解跨域隔离相关内容，更多的内容顺着下边给出的参考资料，可以了解的更多。
+本文侧重从实际代码 demo 层面带领大家了解跨域隔离相关内容，更多的内容顺着下边给出的参考资料，可以了解的更多。
 
 总之记住核心的一点，那就是实际项目开发中，如果需要用到 `SharedArrayBuffer` 等 API ，跨域隔离的开启必不可少。
 
-另外，最近看到的一个东西（内部也用到 `SharedArrayBuffer`，因此需要开启跨域隔离），叫 [webContainers](https://webcontainers.io/)，一种可以让nodejs代码运行在浏览器上的技术解决方案，这是一个从0到1的突破，赋予了浏览器这个载体更多的可能性，感兴趣可以自己去看看。
+另外，最近看到的一个东西（内部也用到 `SharedArrayBuffer`，因此需要开启跨域隔离），叫 [webContainers](https://webcontainers.io/)，一种可以让 nodejs 代码运行在浏览器上的技术解决方案，这是一个从0到1的突破，赋予了浏览器这个载体更多的可能性，感兴趣可以自己去看看。
 
 
 

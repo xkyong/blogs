@@ -21,5 +21,5 @@ $ pnpm docs:preview
 
 ## GitHub Actions
 
-当push到GitHub仓库 `main` 分支时，GitHub Actions 会自动触发，然后在GitHub服务器上自动构建并部署。
+当 push 到 GitHub 仓库 `main` 分支时，GitHub Actions 会自动触发，然后在 GitHub 服务器上自动构建并部署。
 
