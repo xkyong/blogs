@@ -30,7 +30,7 @@ TypeA extends TypeB ? Result1 : Result2
 
 条件类型中可以使用 `extends` 关键字来判断类型的兼容性（基于TypeScript类型层级系统），比如：
 
-```typescript
+```typescript twoslash
 class Person {
   run () {
     console.log('run...')
@@ -61,7 +61,7 @@ type Res2 = Student extends Person ? true : false // true
 
 类似的还有联合类型的类型兼容性比较：
 
-```typescript
+```typescript twoslash
 type Res3 = 1 | 2 extends 1 | 2 | 3 ? true : false // true
 type Res4 = 1 | 4 extends 1 | 2 | 3 ? true : false // false
 ```
@@ -70,7 +70,7 @@ type Res4 = 1 | 4 extends 1 | 2 | 3 ? true : false // false
 
 先来个简单🌰️：
 
-```typescript
+```typescript twoslash
 type StringOrNumber<T> = T extends string ? 'string' : 'number'
 
 type Res5 = StringOrNumber<'kai'> // "string"
@@ -81,7 +81,7 @@ type Res6 = StringOrNumber<23> // "number"
 
 当然，条件类型也是可以嵌套使用的：
 
-```typescript
+```typescript twoslash
 type PrimitiveType<T> = T extends string
 	? 'string'
 	: T extends number
@@ -103,7 +103,7 @@ type Res10 = PrimitiveType<never> // "never"
 
 除了简单的原始类型的类型比较外，我们还可以对更复杂的类型进行比较，来个🌰️：
 
-```typescript
+```typescript twoslash
 type FuncType = (...args: any[]) => any
 
 type FuncReturnString<T extends FuncType> = T extends (...args: any[]) => string ? true : false
@@ -129,7 +129,7 @@ type Res13 = FuncReturnString<() => number> // false
 
 基于上述的触发条件，来看个🌰️：
 
-```typescript
+```typescript twoslash
 type Test<T> = T extends 1 | 2 | 3 ? T : never
 type Res1 = Test<1 | 2 | 3 | 4> // 1 | 2 | 3
 
@@ -138,7 +138,7 @@ type Res2 = 1 | 2 | 3 | 4 extends 1 | 2 | 3 ? 1 | 2 | 3 | 4 : never // never
 
 对于 `Res1`，因为传入的联合类型符合触发的条件，因此触发了分布式特性，例子等价于：
 
-```typescript
+```typescript twoslash
 type Res1 = 
 | (1 extends 1 | 2 | 3 ? 1 : never) 
 | (2 extends 1 | 2 | 3 ? 2 : never) 
@@ -152,7 +152,7 @@ type Res1 =
 
 这一小节的最后，给出几个个人觉得实用的工具类型：
 
-```typescript
+```typescript twoslash
 type IsNever<T> = [T] extends [never] ? true : false
 
 type Res3 = IsNever<never> // true
@@ -162,7 +162,7 @@ type Res5 = IsNever<boolean> // false
 
 上述例子用 `[]` 包裹了传入的泛型参数，避免触发了分布式特性，加上 `never` 只与自身存在类型兼容（`any`就先不考虑），因此 `IsNever` 可以判断出是否为 `never` 类型。
 
-```typescript
+```typescript twoslash
 type IsAny<T> = 1 extends T & 2 ? true : false
 
 type Res6 = IsAny<any> // true
@@ -172,7 +172,9 @@ type Res8 = IsAny<boolean> // false
 
 上述例子中，利用了 `any` 的特殊性，即 `1 & any` 交叉类型的结果会是 `any`，加上 `any` 在TypeScript类型层级中，是所有类型的父类型，因此这里的 `IsAny` 可以判断出是否为 `any` 类型。
 
-```typescript
+```typescript twoslash
+type IsAny<T> = 1 extends T & 2 ? true : false
+
 type IsUnknown<T> = unknown extends T
 ? IsAny<T> extends true
   ? false
@@ -186,7 +188,7 @@ type Res11 = IsUnknown<number> // false
 
 上述例子中，由于TypeScript类型层级中，`unknown` 与 `any` 处于同一层级，2者互为父子类型，因此下边的结果都是 `true`：
 
-```typescript
+```typescript twoslash
 type RR = any extends unknown ? true : false // true
 type RR2 = unknown extends any ? true : false // true
 ```
@@ -207,7 +209,7 @@ type RR2 = unknown extends any ? true : false // true
 
 对于上述需求，可以这么写：
 
-```typescript
+```typescript twoslash
 type FuncType = (...args: any[]) => any
 
 type ExtractFuncReturnType<T extends FuncType> = T extends (...args: any[]) => infer R ? R : never
@@ -237,7 +239,7 @@ type MyType<T> = T extends string ? (infer U)[] : never; // Error
 
 比如我想提取出数组中首尾2个元素的类型，可以如下写：
 
-```typescript
+```typescript twoslash
 type ExtractArrayStartEnd<T extends any[]> = T extends [
   infer Start,
   ...any[],
@@ -252,7 +254,7 @@ type Res4 = ExtractArrayStartEnd<[string, undefined, null, boolean, number]>
 
 提取出Promise中resolve值的类型，可以如下写：
 
-```typescript
+```typescript twoslash
 type ExtractPromiseResolveType<T> = T extends Promise<infer P> ? P : never
 
 type Res5 = ExtractPromiseResolveType<Promise<number>> // number
@@ -267,7 +269,7 @@ type Res6 = ExtractPromiseResolveType<Promise<undefined>> // undefined
 
 案例1：实现 TypeScript 内置工具类型 `Parameters` 和 `ReturnType`：
 
-```typescript
+```typescript twoslash
 type FuncType = (...args: any[]) => any
 
 type MyParameters<T extends FuncType> = T extends (...args: infer P) => any ? P : never
@@ -279,7 +281,7 @@ type Res11 = MyReturnType<(name: string, age: number) => string> // string
 
 案例2：`KebabCase` 形式字符串转换为 `CamelCase` 形式字符串，比如 `hello-world-kai` 转换为  `helloWorldKai`：
 
-```typescript
+```typescript twoslash
 type CamelCase<S extends string> = S extends `${infer L}-${infer R}`
 ? `${L}${CamelCase<Capitalize<R>>}`
 : S
@@ -291,12 +293,12 @@ type Res12 = CamelCase<'hello-world-kai'> // "helloWorldKai"
 
 案例3：提取出数组的元素类型：
 
-```typescript
+```typescript twoslash
 type ArrayItemType<Arr extends any[]> = Arr extends Array<infer ElementType> 
 ? ElementType 
 : never
 
-type Res13 = ArrayItemType<string> // 错误写法
+// type Res13 = ArrayItemType<string> // 错误写法
 type Res14 = ArrayItemType<string[]> // string
 type Res15 = ArrayItemType<((age: number) => string)[]> // (age: number) => string
 type Res16 = ArrayItemType<[number, boolean]> // number | boolean
@@ -306,7 +308,7 @@ type Res17 = ArrayItemType<(number | boolean)[]> // number | boolean
 
 案例4：提取出接口中元素的类型：
 
-```typescript
+```typescript twoslash
 type PropType<T, K extends keyof T> = T extends { [Key in K]: infer V }
 ? V
 : never
@@ -326,7 +328,7 @@ type Res19 = PropType<Person, 'hobbies'> // string[]
 
 案例5：提取出数组中第一个字符串类型的元素：
 
-```typescript
+```typescript twoslash
 type FirstArrayStringItem<Arr extends any[]> = Arr extends [
   infer First,
   ...any[]
@@ -342,8 +344,8 @@ type Res21 = FirstArrayStringItem<['kai', 23, true]> // "kai"
 
 而在 ts@4.7 版本后，引入了 **infer 约束**功能来实现对特定类型地提取，因此上述的 `FirstArrayStringItem` 可简写为：
 
-```typescript
-type FirstArrayStringItem1<Arr extends any[]> = Arr extends [
+```typescript twoslash
+type FirstArrayStringItem<Arr extends any[]> = Arr extends [
   infer First extends string,
   ...any[]
 ]
@@ -356,7 +358,7 @@ type Res23 = FirstArrayStringItem<['kai', 23, true]> // "kai"
 
 案例6：深层提取出 Promise 中 resolve 值的类型
 
-```typescript
+```typescript twoslash
 type DeepExtractPromiseResolveType<T> = T extends Promise<infer R> ? DeepExtractPromiseResolveType<R> : T
 
 type Res24 = DeepExtractPromiseResolveType<Promise<string>> // string

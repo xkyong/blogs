@@ -10,7 +10,7 @@
 
 假设现在需要在自己的项目中书写一个 composable 函数，🌰️如下：
 
-```typescript
+```typescript twoslash
 import { ref, isRef, computed } from 'vue'
 import type { Ref, ComputedRef } from 'vue'
 
@@ -45,7 +45,7 @@ export function useCounter (initialVal?: number | Ref<number>) {
 
 不过像上边这种不是特别复杂的场景，这个 `UseCounterReturn` 类型定义不需要我们自己额外再单独书写，直接用 `ReturnType` 配合 `typeof` 关键字就可以简化实现了，修改后的代码如下：
 
-```typescript
+```typescript twoslash
 import { ref, isRef, computed } from 'vue'
 import type { Ref } from 'vue'
 

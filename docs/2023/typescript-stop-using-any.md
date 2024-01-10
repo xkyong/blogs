@@ -64,7 +64,7 @@ const fullName = (user: any) => {
   return user?.firstName || ""
 }
 
-// version 1 without `any`
+// version 2 without `any`
 
 interface User {
   firstName: string
