@@ -50,5 +50,10 @@ export default defineConfig({
     codeTransformers: [
       transformerTwoslash()
     ]
+  },
+  vite: {
+    ssr: {
+      noExternal: ['shikiji-twoslash', 'vitepress-plugin-twoslash']
+    }
   }
 })
