@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import { transformerTwoslash } from 'vitepress-plugin-twoslash' 
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -43,6 +44,11 @@ export default defineConfig({
     ],
     socialLinks: [
       { icon: 'github', link: 'https://github.com/XKyong/xkyong.github.io' }
+    ]
+  },
+  markdown: {
+    codeTransformers: [
+      transformerTwoslash()
     ]
   }
 })
