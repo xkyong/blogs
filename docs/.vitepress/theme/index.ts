@@ -4,6 +4,7 @@ import { useRoute } from 'vitepress'
 import Theme from 'vitepress/theme'
 import mediumZoom from 'medium-zoom'
 import TwoSlashFloatingVue from 'vitepress-plugin-twoslash/client'
+import 'vitepress-plugin-twoslash/style.css'
 
 import type { EnhanceAppContext } from 'vitepress'
 
