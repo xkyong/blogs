@@ -202,7 +202,7 @@ let rendererConfig = {
 
 下边说说，我当时是如何做**客户端日志埋点**的。
 
-首先通过 nodejs，封装了日志文件写入读取的 `LogHandler `类，核心代码如下：
+首先通过 nodejs，封装了日志文件写入读取的 `LogHandler` 类，核心代码如下：
 
 ```js
 // log-handler.js
@@ -222,7 +222,7 @@ if (!DEBUG) {
 
 const resolve = fileName => path.resolve(electronLogPath, fileName)
 
-const isPlainObject = value => value !== null && typeof value === 'object'
+const isObject = value => value !== null && typeof value === 'object'
 
 const logFormatter = ({ fileName, row, msg, logLevel }) => {
   if ((fileName && !row && !msg) || (fileName && row && !msg)) {
@@ -232,7 +232,7 @@ const logFormatter = ({ fileName, row, msg, logLevel }) => {
   }
 
   const actionTime = moment().format('YYYY-MM-DD HH:mm:ss')
-  const msgStr = isPlainObject(msg) ? JSON.stringify(msg) : msg
+  const msgStr = isObject(msg) ? JSON.stringify(msg) : msg
 
   return `${actionTime} ${logLevel} [${fileName}:${row}] - ${msgStr}\n`
 }
