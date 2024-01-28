@@ -21,7 +21,7 @@ export default defineConfig({
         text: '2024年',
         items: [
           // { text: '唠唠 TypeScript 中内置工具类型衍生的进阶用法', link: '/2024/advanced-usage-of-typescript-tool-types' },
-          // { text: '分享几个自用的工作效率 Boosting 的 Vscode 插件', link: '/2024/my-own-work-boosting-vscode-plugins' }
+          { text: '分享一些自用的工作效率 Boosting 的 Vscode 插件', link: '/2024/my-own-work-boosting-vscode-plugins' }
           // { text: '唠唠 Chrome Devtools 中一些实用的小技巧', link: '/2024/chrome-devtools-useful-tips' },
           // { text: '唠唠我从 VueUse 源码中学到的 TypeScript 编写技巧', link: '/2024/tips-of-writing-typescript-from-reading-vueuse'}
         ]
