@@ -18,7 +18,7 @@ ok，现在开始！
 
 下边以 [swagger.io](https://editor.swagger.io/) 上边下图这个 post 接口为例，演示下如何 To Ts Type 这个插件。
 
-![image-20240127230533508](img/my-own-work-boosting-vscode-plugins/image-20240127230533508.png)
+![image-20240127230533508](img/my-own-work-boosting-vscode-plugins-in-2024/image-20240127230533508.png)
 
 我们看到这个接口的请求体为：
 
@@ -45,7 +45,7 @@ ok，现在开始！
 
 我们把上边的 JSON 内容复制到剪贴板中，然后打开 VScode 编辑器，敲击 `ctrl+alt+t` 或 `cmd+alt+t` 即可完成参数类型结构的自动生成：
 
-![截图_20240127231051](img/my-own-work-boosting-vscode-plugins/截图_20240127231051.gif)
+![截图_20240127231051](img/my-own-work-boosting-vscode-plugins-in-2024/截图_20240127231051.gif)
 
 把上边的内容换下行，可以看到：
 
@@ -72,7 +72,7 @@ type IType = {
 
 首先是 [TypeScript Importer](https://marketplace.visualstudio.com/items?itemName=pmneo.tsimporter)，这一插件会收集你项目内所有的类型定义，在敲出 `:` 时提供这些类型来进行补全。如果从列表中选中，它还会自动帮你把这个类型导入进来：
 
-![截图_20240128112138](img/my-own-work-boosting-vscode-plugins/截图_20240128112138.gif)
+![截图_20240128112138](img/my-own-work-boosting-vscode-plugins-in-2024/截图_20240128112138.gif)
 
 其次是 [IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode)，关于该插件的介绍和使用，这里有一篇文章：[IntelliCode for TypeScript/JavaScript](https://devblogs.microsoft.com/typescript/intellicode-for-typescript-javascript/)。
 
@@ -82,29 +82,29 @@ type IType = {
 
 当我写 `for` 循环条件时：
 
-![image-20240128101128731](img/my-own-work-boosting-vscode-plugins/image-20240128101128731.png)
+![image-20240128101128731](img/my-own-work-boosting-vscode-plugins-in-2024/image-20240128101128731.png)
 
 然后就是几处使用 `numMap` 的操作，基于不同的上下文语义，IntelliCode 插件给的推荐列表顶部项也是不一样的：
 
-![image-20240128101308848](img/my-own-work-boosting-vscode-plugins/image-20240128101308848.png)
+![image-20240128101308848](img/my-own-work-boosting-vscode-plugins-in-2024/image-20240128101308848.png)
 
-![image-20240128101333481](img/my-own-work-boosting-vscode-plugins/image-20240128101333481.png)
+![image-20240128101333481](img/my-own-work-boosting-vscode-plugins-in-2024/image-20240128101333481.png)
 
-![image-20240128101353159](img/my-own-work-boosting-vscode-plugins/image-20240128101353159.png)
+![image-20240128101353159](img/my-own-work-boosting-vscode-plugins-in-2024/image-20240128101353159.png)
 
 如果我不启用 IntelliCode 插件，那么对于上述的 `for` 循环条件编写：
 
-![image-20240128101525591](img/my-own-work-boosting-vscode-plugins/image-20240128101525591.png)
+![image-20240128101525591](img/my-own-work-boosting-vscode-plugins-in-2024/image-20240128101525591.png)
 
 此时我们就得自己手动把 `length` 属性从列表中找出来，或者手动编写出来。
 
 最后是：[Error Lens](https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens)，借助该插件，当我们的代码出现 Eslint 报错或者 TypeScript 类型报错时，我们在编写时即可发现，不需要保存然后走一遍 lint 检验或者 TypeScript 类型检查，节省了部分开发时间：
 
-![image-20240128102854464](img/my-own-work-boosting-vscode-plugins/image-20240128102854464.png)
+![image-20240128102854464](img/my-own-work-boosting-vscode-plugins-in-2024/image-20240128102854464.png)
 
 如上，我把 `const count = ref(0)` 这行代码注释掉了，由于 Error Lens 插件发挥了作用，因此我在编辑器中就可以看到代码出现的问题，不需要保存再走 TypeScript 类型检查也能知道我没有定义 `count` 这个 Ref：
 
-![image-20240128102820604](img/my-own-work-boosting-vscode-plugins/image-20240128102820604.png)
+![image-20240128102820604](img/my-own-work-boosting-vscode-plugins-in-2024/image-20240128102820604.png)
 
 ### Tailwind CSS 开发
 
@@ -114,7 +114,7 @@ type IType = {
 
 当你有一个基于 Tailwind CSS 的项目（当然了，`tailwind.config.{js,cjs,mjs,ts}` 必不可少）时，那么这个插件就会发挥作用：
 
-![截图_20240127222935](img/my-own-work-boosting-vscode-plugins/截图_20240127222935.gif)
+![截图_20240127222935](img/my-own-work-boosting-vscode-plugins-in-2024/截图_20240127222935.gif)
 
 如上，我们不需要单独额外去记忆这些 css 工具类，因为该插件会在我们敲击相关类前缀时给我们提供对应工具类列表供我们选择。
 
@@ -134,11 +134,11 @@ border: 1px solid transparent;
 
 操作也很简单，只需要把上边的样式复制到剪贴板中，然后打开 VScode 编辑器，敲击 `ctrl+alt+x` 或  `cmd+alt+x` 即可完成转换：
 
-![截图_20240127224132](img/my-own-work-boosting-vscode-plugins/截图_20240127224132.gif)
+![截图_20240127224132](img/my-own-work-boosting-vscode-plugins-in-2024/截图_20240127224132.gif)
 
 还有一个插件是：[vscode-tailwind-magic](https://marketplace.visualstudio.com/items?itemName=simonhe.vscode-tailwind-magic)，它让我们可以用属性或快捷写法的方式来生成工具类：
 
-![](img/my-own-work-boosting-vscode-plugins/vscode-tailwind-magic-demo.gif)
+![](img/my-own-work-boosting-vscode-plugins-in-2024/vscode-tailwind-magic-demo.gif)
 
 关于更多用法，详情可参看该仓库的 README 文档：[vscode-tailwind-magic-README_zh.md](https://github.com/Simon-He95/vscode-tailwind-magic/blob/main/README_zh.md)。
 
@@ -150,13 +150,13 @@ border: 1px solid transparent;
 
 首先是 [v component prompter](https://marketplace.visualstudio.com/items?itemName=simonhe.v-component-prompter)，该插件能够为 sfc 导入的自定义组件带来 `props` 、 `emitEvents` 和 `expose methods` 提示，该插件仓库的 demo 动图很好地演示了用法：
 
-![](img/my-own-work-boosting-vscode-plugins/v-component-prompter-demo-min.gif)
+![](img/my-own-work-boosting-vscode-plugins-in-2024/v-component-prompter-demo-min.gif)
 
 该插件的使用，作者写的很清楚了，详情可参看该仓库的 README 文档：[v-component-prompter-README_zh.md](https://github.com/Simon-He95/v-component-prompter/blob/main/README_zh.md)。
 
 另外一个是 [fast jump](https://marketplace.visualstudio.com/items?itemName=simonhe.fast-jump)，能够快速定位到导入依赖期望的源位置，减少到达期望路径中的步骤，该插件仓库的 demo 动图也演示了用法：
 
-![](img/my-own-work-boosting-vscode-plugins/fast-jump-demo-min.gif)
+![](img/my-own-work-boosting-vscode-plugins-in-2024/fast-jump-demo-min.gif)
 
 该插件的使用，作者也写的很清楚了，详情可参看该仓库的 README 文档：[fast-jump-README_zh.md](https://github.com/Simon-He95/fast-jump/blob/main/README_zh.md)。
 
@@ -168,13 +168,13 @@ border: 1px solid transparent;
 
 举个简单例子，假设我现在有一个表单页面，其中有个地方需要输入ip地址并且需要检验合法性，那么，我们可以直接写注释 `检验 ip 地址的有效性`，然后就可以看到 Github Copilot 给的代码建议，敲击 tab 键即可生成代码：
 
-![截图_20240121223315](img/my-own-work-boosting-vscode-plugins/截图_20240121223315.gif)
+![截图_20240121223315](img/my-own-work-boosting-vscode-plugins-in-2024/截图_20240121223315.gif)
 
 生成的代码基本不需要修改，可直接使用，省去了我们再敲击一遍的时间。
 
 针对上边生成的代码，如果我把 `parts.length !== 4` 这段代码改成 `parts.length !== 5` ，那么，代码逻辑就出现问题了（模拟实际工作中出现的代码逻辑问题），此时，我们可以直接借助 Github Copilot Chat 帮我们找出问题并给出解决方案：
 
-![截图_20240121224112](img/my-own-work-boosting-vscode-plugins/截图_20240121224112.gif)
+![截图_20240121224112](img/my-own-work-boosting-vscode-plugins-in-2024/截图_20240121224112.gif)
 
 我演示仅仅是这2个插件的常用功能，更多用法，建议自己多在工作中解锁。
 
@@ -186,11 +186,11 @@ border: 1px solid transparent;
 
 对于源码中某一行代码，我们可以通过快捷键组合 `ctrl+alt+k` 打上书签，成功之后，左侧会出现一个书签图标，同时左侧插件快捷菜单入口那里会有有一条记录，我们还可以对该记录进行备注说明：
 
-![image-20240128104731747](img/my-own-work-boosting-vscode-plugins/image-20240128104731747.png)
+![image-20240128104731747](img/my-own-work-boosting-vscode-plugins-in-2024/image-20240128104731747.png)
 
 如上，在做了很多标记之后，后续，我们就可以直接点击左侧的书签记录快速定位到对应源码位置，相比全局搜索方便和快捷得多：
 
-![截图_20240128105157](img/my-own-work-boosting-vscode-plugins/截图_20240128105157.gif)
+![截图_20240128105157](img/my-own-work-boosting-vscode-plugins-in-2024/截图_20240128105157.gif)
 
 这个插件是帮助我阅读仓库源码的一大利器，现在我把它推荐给你！
 
