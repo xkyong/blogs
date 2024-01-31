@@ -1,4 +1,4 @@
-# 分享一些自用的工作效率 Boosting 的 Vscode 插件
+# 分享 2024 年一些自用的工作效率 Boosting 的 Vscode 插件
 
 ## （一）前言
 
