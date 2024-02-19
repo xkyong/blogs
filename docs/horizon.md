@@ -1,7 +1,8 @@
 以下列举的是自己平常浏览的技术网站，在此给大家做个分享。
 
-## 深度阅读文章
+## 技术阅读
 
+* [阮一峰的网络日志](https://www.ruanyifeng.com/blog/)
 * [ascoders-weekly](https://github.com/ascoders/weekly)
 * [joshwcomeau-blogs](https://www.joshwcomeau.com/latest/)
 * [冴羽-博客](https://github.com/mqyqingfeng/Blog)
@@ -12,7 +13,6 @@
 * [The Vue Point](https://blog.vuejs.org/)
 * [Github Trending](https://github.com/trending)
 * [v2ex](https://www.v2ex.com/)
-* [酷壳网-左耳朵耗子](https://coolshell.cn/)
 
 ## 前端周刊
 
@@ -32,3 +32,4 @@
 
 * [印记中国前端](https://docschina.org/)
 * [javascript明星项目](https://risingstars.js.org/2021/zh)
+* [State of CSS](https://stateofcss.com/en-US)

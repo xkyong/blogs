@@ -53,7 +53,7 @@
   - [md-to-pdf](https://www.npmjs.com/package/md-to-pdf)：A simple and hackable CLI tool for converting markdown to pdf.
   - [markdown-pdf(vscode 插件)](https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf)
 - [sharp](https://github.com/lovell/sharp)：图片压缩高性能库，配套的官网链接为：https://sharp.pixelplumbing.com/
-
+- ...
 
 
 ## Vue相关
@@ -64,7 +64,7 @@
 - [vue-lazyload](https://www.npmjs.com/package/vue-lazyload)：vue中使用图片懒加载的方案
 - [vue-content-placeholders](https://www.npmjs.com/package/vue-content-placeholders)：react中使用骨架屏的方案
 - [vue-styled-components](https://www.npmjs.com/package/vue-styled-components)：css-in-js方案
-
+- ...
 
 
 ## React相关
@@ -75,4 +75,4 @@
 - [react-lazy-load-image-component](https://www.npmjs.com/package/react-lazy-load-image-component)：react中使用图片懒加载的方案
 - [react-placeholder](https://www.npmjs.com/package/react-placeholder)：react中使用骨架屏的方案
 - [styled-components](https://www.npmjs.com/package/styled-components)：css-in-js方案，详情可参看文档：https://styled-components.com/
-
+- ...
