@@ -2,7 +2,7 @@
 
 ## （一）前言
 
-2024年了，关于 Vscode 插件的推荐文章，网上还是不少的，因此，我这里不会罗列重复推荐的插件，而是更侧重基于日常工作的开发场景，分享些自用的，确实能够提升工作效率的插件。
+2024 年了，关于 Vscode 插件的推荐文章，网上还是不少的，因此，我这里不会罗列重复推荐的插件，而是更侧重基于日常工作的开发场景，分享些自用的，确实能够提升工作效率的插件。
 
 因为日常开发主 Vue 框架，偶尔配合 TypeScript 和 Tailwind CSS 来编写项目，因此，以下内容会主要从这几个方面展开。
 
@@ -178,7 +178,7 @@ border: 1px solid transparent;
 
 我演示仅仅是这2个插件的常用功能，更多用法，建议自己多在工作中解锁。
 
-### Bookmarks
+#### Bookmarks
 
 如果你想阅读一些库或者框架的源码，那么，我一定会推荐你安装下这个 [Bookmarks](https://marketplace.visualstudio.com/items?itemName=alefragnani.Bookmarks) 插件。
 
