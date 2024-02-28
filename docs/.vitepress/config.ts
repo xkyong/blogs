@@ -13,8 +13,9 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '首页', link: '/' },
-      { text: '用过的第三方库', link: '/package-list' },
-      { text: '前端视野', link: '/horizon' }
+      { text: '前端视野', link: '/horizon' },
+      { text: '年度盘点导航', link: '/annual-summary' },
+      { text: '第三方库', link: '/package-list' }
     ],
     sidebar: [
       {
