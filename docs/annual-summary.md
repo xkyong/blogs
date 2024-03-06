@@ -4,6 +4,7 @@
 
 * [穿越时空：2023年前端技术盘点与2024年技术展望](https://mp.weixin.qq.com/s/LiygBJqMN8U_vSpAjxMibQ)
 * [2023 年前端大事记](https://juejin.cn/post/7316592832189300746)
+* [Node.js 2023 Year in Review](https://nodesource.com/blog/nodejs-2023-year-in-review)
 
 ## 2022 年
 
