@@ -6,7 +6,7 @@
 * [ascoders-weekly](https://github.com/ascoders/weekly)
 * [joshwcomeau-blogs](https://www.joshwcomeau.com/latest/)
 * [冴羽-博客](https://github.com/mqyqingfeng/Blog)
-* [web.dev](https://web.dev/)
+* [web.dev](https://web.dev/)(mirror: [web.dev for China](https://web.developers.google.cn/?hl=zh-cn))
 * [侑夕-个人博客](https://tw93.fun/)
 * [antfu个人博客](https://antfu.me/)
 * [javascript snippets](https://www.30secondsofcode.org/js/p/1)
