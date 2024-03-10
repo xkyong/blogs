@@ -6,7 +6,7 @@
 * [ascoders-weekly](https://github.com/ascoders/weekly)
 * [joshwcomeau-blogs](https://www.joshwcomeau.com/latest/)
 * [冴羽-博客](https://github.com/mqyqingfeng/Blog)
-* [web.dev](https://web.dev/)(mirror: [web.dev for China](https://web.developers.google.cn/?hl=zh-cn))
+* [web.dev](https://web.dev/)（mirror: [web.dev for China](https://web.developers.google.cn/?hl=zh-cn)）
 * [侑夕-个人博客](https://tw93.fun/)
 * [antfu个人博客](https://antfu.me/)
 * [javascript snippets](https://www.30secondsofcode.org/js/p/1)
@@ -18,7 +18,9 @@
 
 * [MDH 前端周刊（云谦）](https://www.yuque.com/chencheng/mdh-weekly)
 * [Web 技术周刊（平侠）](https://www.yuque.com/zenany/fe_weekly/about)
+* [JavaScript Weekly](https://javascriptweekly.com/)
 * [Node Weekly](https://nodeweekly.com/)
+* [印记中文周刊](https://docschina.org/news)
 * [奇舞周刊](https://weekly.75.team/issue469.html)
 * [前端食堂](https://www.zhihu.com/column/c_1128995663182233600)
 * [侑夕-潮流周刊](https://weekly.tw93.fun/)
@@ -30,6 +32,7 @@
 
 ## 前端技术清单
 
-* [印记中国前端](https://docschina.org/)
+* [Node.js前端中文网](https://nodejs.cn)
+* [印记中文](https://docschina.org/)
 * [javascript明星项目](https://risingstars.js.org/2021/zh)
 * [State of CSS](https://stateofcss.com/en-US)
