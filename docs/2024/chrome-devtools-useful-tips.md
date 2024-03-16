@@ -26,15 +26,15 @@ ok，现在开始！
 
 ### Sources 面板：更好区分项目源代码和编译的代码
 
-Sources 面板中启用 **Group files by Authored / Deployed** 设置可先查看原始源代码（已编写），这样我们可以更好区分项目源代码和编译的代码，并且还能更快地导航到源代码。
+Sources 面板中启用 `Group by Authored/Deployed` 设置可先查看原始源代码（已编写），这样我们可以更好区分项目源代码和编译的代码，并且还能更快地导航到源代码。
 
 ![](img/chrome-devtools-useful-tips/group-files-authored-d-55bfdfe81a59b_960.png)
 
 详细可查看文章：[使用源代码映射进行调试](https://developer.chrome.com/docs/devtools/javascript/source-maps?hl=zh-cn#debugging_with_source_maps)。
 
-### Elements/Rendering 面板：解决dropdown类的DOM元素难以调试问题
+### Elements/Rendering 面板：解决 dropdown 类的 DOM 元素难以调试问题
 
-在日常开发中，当将焦点从当前页面切换到开发者工具时，某些叠加层元素（UI组件库中一般是 `dropdown` 相关的DOM 元素）在焦点触发时会自动隐藏。例如，下拉列表、菜单或日期选择器。
+在日常开发中，当将焦点从当前页面切换到开发者工具时，某些叠加层元素（UI 组件库中一般是 `dropdown` 相关的 DOM 元素）在焦点触发时会自动隐藏。例如，下拉列表、菜单或日期选择器。
 
 此时如果我们要调试这些叠加层元素，可以尝试2种方式，一种是配合 `Elements/Rendering` 面板，选中对应的 DOM 元素然后开启 `Emulate a focused page` 功能：
 
