@@ -84,9 +84,9 @@ Recorder 面板功能还是比较强大的，更多内容，详看：[录制、�
 
 ### Sources 面板：使用 JavaScript Snippets 
 
-我们可以通过 Sources 面板添加 snippets（代码段）存储些需要经常在浏览器中 Console 面板中测试的代码，然后在需要运行的地方（开启 DevTools 的情况下），敲击 `ctrl + p` 后，键入 `!` 后选择对应的 snippet 执行即可，下边简单演示下：
+我们可以通过 Sources 面板添加 snippets（代码段）存储些需要经常在浏览器 Console 面板中测试的代码，然后在需要运行的地方（开启 DevTools 的情况下），敲击 `ctrl + p` 后，键入 `!` 后选择对应的 snippet 执行即可，下边简单演示下：
 
-首选在 Sources 面板中找到 `Snippets` 位置：
+首先在 Sources 面板中找到 `Snippets` 位置：
 
 ![image-20240316155521442](img/chrome-devtools-useful-tips/image-20240316155521442.png)
 
