@@ -4,6 +4,7 @@
 
 * [阮一峰的网络日志](https://www.ruanyifeng.com/blog/)
 * [ascoders-weekly](https://github.com/ascoders/weekly)
+* [Tania-blogs](https://www.taniarascia.com/)
 * [joshwcomeau-blogs](https://www.joshwcomeau.com/latest/)
 * [冴羽-博客](https://github.com/mqyqingfeng/Blog)
 * [web.dev](https://web.dev/)（mirror: [web.dev for China](https://web.developers.google.cn/?hl=zh-cn)）
