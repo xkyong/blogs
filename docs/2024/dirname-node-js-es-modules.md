@@ -15,7 +15,7 @@ import.meta.dirname  // The current module's directory name (__dirname)
 import.meta.filename // The current module's file name (__filename)
 ```
 
-如果你感兴趣，还有更多关于 `__dirname` 或者 `__filename` 的内容，请继续往下看。
+如果你感兴趣，还有更多关于 `__dirname` 或者 `__filename` 的演变历史，请继续往下看。
 
 ## 访问当前目录
 
