@@ -1,10 +1,10 @@
-# 【翻译】CommonJS正在破坏JavaScript
+# 【翻译】CommonJS 正在破坏 JavaScript
 
 > 原文地址：https://deno.com/blog/commonjs-is-hurting-javascript
 
 JavaScript 是 Web 开发领域无可争议的王者，但它正在遭到破坏——不是被竞争对手的语言或革命性的新技术所破坏，而是被自己过去的包袱所破坏。这个阴险的破坏者不是别的，正是我们已经容忍了太久的老式模块系统 [CommonJS](https://en.wikipedia.org/wiki/CommonJS)。
 
-## CommonJS的兴起
+## CommonJS 的兴起
 
 JavaScript 诞生约 15 年后，开始从浏览器扩展到服务器。越来越多的大型项目开始使用这种语言，JavaScript 需要一种更好的方法来处理大量源代码。它需要模块化。
 
@@ -36,7 +36,7 @@ JavaScript 诞生约 15 年后，开始从浏览器扩展到服务器。越来�
 
 到了 2013 年，CommonJS 小组开始逐渐解散。但就在那一年，负责监督 JavaScript 核心语言更新的 TC39 委员会已经开始着手开发 CommonJS 的接替模块：ECMAScript 模块。
 
-## 网络优先的ECMAScript模块
+## 网络优先的 ECMAScript 模块
 
 随着 [ES6 语言规范](https://262.ecma-international.org/6.0/) 的发布，TC39 委员会终于在 JavaScript 语言中直接引入了模块系统。其目标是建立一个适用于网络的单一模块加载器系统，包括异步模块加载、浏览器兼容性、静态分析和 tree shaking。
 
@@ -50,7 +50,7 @@ JavaScript 诞生约 15 年后，开始从浏览器扩展到服务器。越来�
 
 
 
-## Node决定同时支持CJS和ESM
+## Node 决定同时支持 CJS 和 ESM
 
 > ES Modules 和 CommonJS 就像老海湾调味料和香草冰淇淋一样相得益彰。
 >
@@ -72,7 +72,7 @@ Borins 是 Node "模块团队" 的开发人员之一，该团队的任务是在 
 
 
 
-## 再见，感谢所有的`require`
+## 再见，感谢所有的 `require`
 
 >  我们设想在未来，安装模块后，开发人员无需构建步骤就能在 Node.js 或浏览器中运行代码。
 >
@@ -80,6 +80,6 @@ Borins 是 Node "模块团队" 的开发人员之一，该团队的任务是在 
 
 2009 年，CommonJS 正是 JavaScript 所需要的。该小组解决了一个棘手的问题，并强行通过了一个解决方案，该解决方案每天仍被使用数百万次。
 
-但是，随着 ESM 成为标准，聚焦的重点转变到了CommonJS无法胜任的云原生（边缘、浏览器和 serverless 计算）。对开发人员来说，ESM 是更好的解决方案，因为他们可以编写符合浏览器标准的代码；对用户来说，他们可以获得更好的终端体验。
+但是，随着 ESM 成为标准，聚焦的重点转变到了 CommonJS 无法胜任的云原生（边缘、浏览器和 serverless 计算）。对开发人员来说，ESM 是更好的解决方案，因为他们可以编写符合浏览器标准的代码；对用户来说，他们可以获得更好的终端体验。
 
 [加入讨论](https://news.ycombinator.com/item?id=36537533)。
