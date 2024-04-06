@@ -1,6 +1,8 @@
 # 【翻译】Node.js worker 线程入门指南
 
 > 原文地址：https://betterstack.com/community/guides/scaling-nodejs/nodejs-workers-explained/
+>
+> 译者注：关于使用 worker 线程来实践构建 node 程序的 npm 库，可以看看 antfu 的这个：[pkg-exports](https://github.com/antfu/pkg-exports)
 
 由于 Node.js 的架构针对 I/O 密集型活动进行了优化——这也是大多数网络服务器的主要特点，因此传统上它并不适合 CPU 密集型操作。
 
