@@ -48,7 +48,7 @@ export default defineConfig({
             link: '/2024/modern-javascript-library-starter',
           },
           {
-            text: '分享 2024 年一些自用的工作效率 Boosting 的 Vscode 插件',
+            text: '🔥分享 2024 年一些自用的工作效率 Boosting 的 Vscode 插件',
             link: '/2024/my-own-work-boosting-vscode-plugins-in-2024',
           },
           // { text: '唠唠我从 VueUse 源码中学到的 TypeScript 编写技巧', link: '/2024/tips-of-writing-typescript-from-reading-vueuse'}

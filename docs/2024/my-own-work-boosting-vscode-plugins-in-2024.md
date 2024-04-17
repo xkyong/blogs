@@ -1,4 +1,4 @@
-# 分享 2024 年一些自用的工作效率 Boosting 的 Vscode 插件
+# 🔥分享 2024 年一些自用的工作效率 Boosting 的 Vscode 插件
 
 ## （一）前言
 
@@ -138,7 +138,7 @@ border: 1px solid transparent;
 
 还有一个插件是：[vscode-tailwind-magic](https://marketplace.visualstudio.com/items?itemName=simonhe.vscode-tailwind-magic)，它让我们可以用属性或快捷写法的方式来生成工具类：
 
-![](img/my-own-work-boosting-vscode-plugins-in-2024/vscode-tailwind-magic-demo.gif)
+![](img/my-own-work-boosting-vscode-plugins-in-2024/tailwind-magic.png)
 
 关于更多用法，详情可参看该仓库的 README 文档：[vscode-tailwind-magic-README_zh.md](https://github.com/Simon-He95/vscode-tailwind-magic/blob/main/README_zh.md)。
 
@@ -150,13 +150,13 @@ border: 1px solid transparent;
 
 首先是 [v component prompter](https://marketplace.visualstudio.com/items?itemName=simonhe.v-component-prompter)，该插件能够为 sfc 导入的自定义组件带来 `props` 、 `emitEvents` 和 `expose methods` 提示，该插件仓库的 demo 动图很好地演示了用法：
 
-![](img/my-own-work-boosting-vscode-plugins-in-2024/v-component-prompter-demo-min.gif)
+![](img/my-own-work-boosting-vscode-plugins-in-2024/component-prompter.png)
 
 该插件的使用，作者写的很清楚了，详情可参看该仓库的 README 文档：[v-component-prompter-README_zh.md](https://github.com/Simon-He95/v-component-prompter/blob/main/README_zh.md)。
 
 另外一个是 [fast jump](https://marketplace.visualstudio.com/items?itemName=simonhe.fast-jump)，能够快速定位到导入依赖期望的源位置，减少到达期望路径中的步骤，该插件仓库的 demo 动图也演示了用法：
 
-![](img/my-own-work-boosting-vscode-plugins-in-2024/fast-jump-demo-min.gif)
+![](img/my-own-work-boosting-vscode-plugins-in-2024/fast-jump.png)
 
 该插件的使用，作者也写的很清楚了，详情可参看该仓库的 README 文档：[fast-jump-README_zh.md](https://github.com/Simon-He95/fast-jump/blob/main/README_zh.md)。
 
