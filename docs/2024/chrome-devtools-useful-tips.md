@@ -14,7 +14,7 @@ ok，现在开始！
 
 ### Network 面板：直接通过修改响应头解决资源请求跨域问题
 
-在打开 DevTools 的情况下，我们可以直接通过 Network 面板中 `Override` 本地替换功能，直接通过修改响应头解决资源请求跨域问题，相比较于使用代理，这种操作更加直接迅速，我们也多收获了一种解决跨域问题的解决方案。
+在打开 DevTools 的情况下，我们可以直接通过 Network 面板中 `Override` 本地替换功能，直接通过修改响应头解决资源请求跨域问题，相比较于使用代理，这种操作更加直接迅速，我们也多收获了一种跨域问题的解决方案。
 
 除此之外，我们还能对接口的响应体进行覆盖重写，起到 Mock 作用。
 
@@ -39,6 +39,10 @@ Sources 面板中启用 `Group by Authored/Deployed` 设置可先查看原始源
 此时如果我们要调试这些叠加层元素，可以尝试2种方式，一种是配合 `Elements/Rendering` 面板，选中对应的 DOM 元素然后开启 `Emulate a focused page` 功能：
 
 ![](img/chrome-devtools-useful-tips/截图_20240316112759.gif)
+
+> 2024年04月17号20:25更新：如果你的 Chrome 浏览器更新到最新的 123.0.6312.123 版本，那么，`Emulate a focused page` 功能还可以在如下位置开启：
+
+![image-20240417203008831](img/chrome-devtools-useful-tips/image-20240417203008831.png)
 
 详细可查看文章：[模拟聚焦的网页](https://developer.chrome.com/docs/devtools/rendering/apply-effects?hl=zh-cn)。
 
@@ -70,7 +74,7 @@ Recorder 面板功能还是比较强大的，更多内容，详看：[录制、�
 
 ### Rendering 面板：直观感受页面回流（或重排）和重绘
 
-以往我们更多是从概念上学习了解页面的回流（或重排）和重绘，不过 Rendering 面板提供了 2 个功能选项，能够让我们只直观的感受到页面回流和重绘。
+以往我们更多是从概念上学习了解页面的回流（或重排）和重绘，不过 Rendering 面板提供了 2 个功能选项，能够让我们更直观地感受到页面回流和重绘。
 
 下边演示下，如果我们需要查看页面重绘的区域，打开 Rendering 面板，然后选中 `Paint flashing`（渲染闪烁）即可：
 
