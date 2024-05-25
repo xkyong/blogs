@@ -3,8 +3,6 @@ import { ref, onMounted, watch } from 'vue'
 import { useData } from 'vitepress/dist/client/theme-default/composables/data'
 import { APPEARANCE_KEY } from 'vitepress/dist/client/shared'
 import VPSwitch from 'vitepress/dist/client/theme-default/components/VPSwitch.vue'
-import VPIconSun from 'vitepress/dist/client/theme-default/components/icons/VPIconSun.vue'
-import VPIconMoon from 'vitepress/dist/client/theme-default/components/icons/VPIconMoon.vue'
 
 const { site, isDark } = useData()
 const checked = ref(false)
@@ -118,15 +116,15 @@ watch(checked, (newIsDark) => {
 </script>
 
 <template>
-  <label title="toggle dark mode" style="padding-left: 1rem">
+  <label :title="isDark ? 'toggle light mode' : 'toggle dark mode'" style="padding-left: 1rem">
     <VPSwitch
       class="VPSwitchAppearance"
       :class="{ 'VPSwitchAppearanceTransition': isAppearanceTransition }"
       :aria-checked="checked"
       @click="toggle"
     >
-      <VPIconSun class="sun" />
-      <VPIconMoon class="moon" />
+    <span class="vpi-sun sun"></span>
+    <span class="vpi-moon moon"></span>
     </VPSwitch>
   </label>
 </template>

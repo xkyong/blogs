@@ -23,6 +23,7 @@ export default {
     })
   },
   enhanceApp({ app }: EnhanceAppContext) {
+    // @ts-expect-error
     app.use(TwoSlashFloatingVue)
   },
   setup () {
