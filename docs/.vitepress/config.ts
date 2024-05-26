@@ -32,6 +32,10 @@ export default defineConfig({
           // { text: '唠唠 TypeScript 中内置工具类型衍生的进阶用法', link: '/2024/advanced-usage-of-typescript-tool-types' },
           // { text: '分享几个好用的 Node.js cli 工具库', link: '/2024/my-own-useful-cli-tools-in-2024' },
           {
+            text: '唠唠 TypeScript 类型编程中的泛型用法与案例实践',
+            link: '/2024/ts-generics-and-practice',
+          },
+          {
             text: '【翻译】Node.js worker 线程入门指南',
             link: '/2024/nodejs-workers-explained',
           },
