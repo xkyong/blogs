@@ -370,7 +370,7 @@ type Res10 = IsUnknown<any> // false
 type Res11 = IsUnknown<number> // false
 ```
 
-上述利用泛型跟条件类型的结合，封装了3个分别用来判断 `never`、`any` 和 `unknown` 类型的工具类型，而关于这3个工具类型的分析，可以看看我的另外1篇文章：[唠唠 TypeScript 分布式条件类型与 infer 及应用-分布式条件类型](http://localhost:5173/2023/ts-distributive-conditional-type-and-infer.html#_2-%E5%88%86%E5%B8%83%E5%BC%8F%E6%9D%A1%E4%BB%B6%E7%B1%BB%E5%9E%8B)。
+上述利用泛型跟条件类型的结合，封装了3个分别用来判断 `never`、`any` 和 `unknown` 类型的工具类型，而关于这3个工具类型的分析，可以看看我的另外1篇文章：[唠唠 TypeScript 分布式条件类型与 infer 及应用-分布式条件类型](https://xkyong.github.io/2023/ts-distributive-conditional-type-and-infer.html#_2-%E5%88%86%E5%B8%83%E5%BC%8F%E6%9D%A1%E4%BB%B6%E7%B1%BB%E5%9E%8B)。
 
 ```typescript twoslash
 // 交集
@@ -434,7 +434,7 @@ type InstanceType<T extends ClassType> = T extends abstract new (
   : any
 ```
 
-如上代码配合使用了泛型、条件类型和 `infer` 关键字，来完成类型的封装。关于 `infer` 关键字的介绍，可以看看我的另外1篇文章：[唠唠 TypeScript 分布式条件类型与 infer 及应用-infer 介绍](http://localhost:5173/2023/ts-distributive-conditional-type-and-infer.html#_1-infer%E4%BB%8B%E7%BB%8D)。
+如上代码配合使用了泛型、条件类型和 `infer` 关键字，来完成类型的封装。关于 `infer` 关键字的介绍，可以看看我的另外1篇文章：[唠唠 TypeScript 分布式条件类型与 infer 及应用-infer 介绍](https://xkyong.github.io/2023/ts-distributive-conditional-type-and-infer.html#_1-infer%E4%BB%8B%E7%BB%8D)。
 
 如上几个内置工具类型对应的使用示例如下：
 
