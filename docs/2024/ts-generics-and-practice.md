@@ -80,6 +80,8 @@ echo(true)
 
 ### 2. 类型别名中的泛型用法
 
+> 代码示例汇总：[Playground Link](https://www.typescriptlang.org/play/?#code/C4TwDgpgBAqgdgSwPZwCrggHlQPigXilSgB8o4BXAWwCMIAnUqAZ2HoTgHMAob0SKACUIzAIwFYiFOkiZRAJgDMOPhiEj5E+MjQZMNJEgA2EAIZwVqgTGYMAcqarRCAb25RyjiAC4WbDjweppw+5NR09O5QVKYmvgbGZnBRABZINDQIIgD8vqzsXADaALrcAL68-NDCAI4UCPQQACY29l4StfWNTZit9A5OKlXqpk0oRiB9A84jY3ATvbb9XkNqU17ihAAKCADGANaLbU4ANFAA5HBe50znwRDnlsMAYhRwuzIzABQAdH+m9E4zF85hAJQAlAQ8KDKmpXu9hMAKPQ4ABlfxcbBQCAAD2AEDgTWYUHhHwweEIxFx+MJxN+-0BwKgoIhUL8BU4UGyUDYFGgvgAZrFbLCBMJmIoJKTEci0RjOJgvlcnHl5ZD8Hh8gE8AB6HU8+h8qzVEQAFilb12MpR6I5iuVoS1XHVeASJnMuv1QqMIuG4oArBaERAkTb5YqXWFaAxPVBvSLRSbmAA2INWkOy20Be1eVUcyNOzix3kQRNQACSzFJEiU5upBKJJMtny5Br5UEFwtLfpEAHY09a5Xba7GGPQkPRfC3LuEGDcxiJyEhgCxTMAEMwBSAeSloLsUPlTBwV+dSZ9zj9eMbYEtppptntDutThcHTcyHcQo8ywBpCAgJABWfGZ9n-QCb2OaAADIoBcCphkrP8AIFAB5GgACsJEua5bhCQk52xPEG2JJDAOA1sSw7OMu2vYDJQfA4jmWF9sKcd8Ljwpo51Hehx0nIg1HOAAiB0hKYITOIgIT5yQRc4GXVd103bdgF3KB9zgQ9jwuUDkIg5iHkva8dgOeRsDOH9CJpRtdPA4hCFsgUiApWCoCiQotigDgoB-Yopw84oAG43IqWjby8c0GP2MzgLOViHlue5v2GYDAyimLwsGMsAAkICMIwkEwW0rOI9kAiwgB1CcjCaR4JAAA1y-KkCgAASFxbTKeqcrygrUGJQgmoKzBzk+VFdnYMBgGStQhqQKr6BqiQ5qAA)。
+
 首先来个简单🌰：
 
 ```typescript twoslash
@@ -129,9 +131,9 @@ type FuncType = (...args: any[]) => any
 
 type FuncReturnString<T extends FuncType> = T extends (...args: any[]) => string ? true : false
 
-type Res1 = FuncReturnString<(name: string) => string> // true
-type Res2 = FuncReturnString<(name: string) => boolean> // false
-type Res3 = FuncReturnString<() => number> // false
+type Res3 = FuncReturnString<(name: string) => string> // true
+type Res4 = FuncReturnString<(name: string) => boolean> // false
+type Res5 = FuncReturnString<() => number> // false
 ```
 
 如上例子，可以通过 `T extends (...args: any[]) => string ? true : false` 条件类型判断一个函数的返回值类型是否是 `string`，这里用到了泛型参数 `T`。
@@ -143,10 +145,10 @@ type FuncType = (...args: any[]) => any
 
 type FuncReturnString<T extends FuncType> = T extends (...args: any[]) => string ? true : false
 
-type Res1 = FuncReturnString<(name: string) => string> // true
+type Res6 = FuncReturnString<(name: string) => string> // true
 
 type IsFunc = 234 extends FuncType ? true : false
-// type Res2 = FuncReturnString<234> error: Type 'number' does not satisfy the constraint 'FuncType'.
+// type Res7 = FuncReturnString<234> error: Type 'number' does not satisfy the constraint 'FuncType'.
 ```
 
 对于上述示例，因为 `IsFunc` 的类型结果为 `false`，不满足 `extends FuncType` 的类型约束条件，因此 `FuncReturnString` 会出现类型报错。
@@ -161,11 +163,11 @@ type UserName = {
   hobbies?: string[]
 }
 
-type UserName1 = Pick<UserName, 'name' | 'age'>
+type UserName2 = Pick<UserName, 'name' | 'age'>
 
 type KeyofUserName = keyof UserName & {}
 type IsKeyofObj = 'name' | 'gender' extends KeyofUserName ? true : false
-// type UserName2 = Pick<UserName, 'name' | 'gender'> error: Type '"name" | "gende"' does not satisfy the constraint 'keyof UserName'.
+// type UserName3 = Pick<UserName, 'name' | 'gender'> error: Type '"name" | "gende"' does not satisfy the constraint 'keyof UserName'.
 ```
 
 对于上述示例，因为 `IsKeyofObj` 的类型结果为 `false`，不满足 `extends keyof T` （这里的 `keyof T` 即为上边的 `KeyofUserName`）的类型约束条件，因此 `Pick` 会出现类型报错。
@@ -186,8 +188,8 @@ type UserName = {
   hobbies?: string[]
 }
 
-type UserName1 = Pick2<UserName, 'name' | 'age'>
-type UserName2 = Pick2<UserName>
+type UserName4 = Pick2<UserName, 'name' | 'age'>
+type UserName5 = Pick2<UserName>
 ```
 
 如上，我们在 `Pick2` 的第2个泛型参数加入了 `=`，给参数设置了默认值 `keyof T`，如此设置，当第2个参数类型不传入时，`K` 参数默认使用 `keyof T` 类型。
@@ -214,6 +216,8 @@ type HelloWorld = Hello
 类型编程中，基本上，泛型是少不了，而且常常会与一些高阶的工具类型（比如联合类型、交叉类型、索引类型、映射类型和条件类型等）结合一起使用。
 
 ### 1. 泛型与联合/交叉类型的结合
+
+> 代码示例汇总：[Playground Link](https://www.typescriptlang.org/play/?#code/JYOwLgpgTgZghgYwgAgArQM4HsQElIC2yA3gFDLIhwEQBcyGYUoA5ucnC3ZQK4EBG0dgTgAbbvyxZxcEOwAWWfv2AQMAfnqNmIFgG0AuqQC+pUmACeABxQBhLANAQAPABUAfMgC8aTDnwQRABkyK5mljahEIjy0AFEPvaOIC7EyOziAG4QovQgfIJQ7AhYPFAY3NqsJu7h1igAymA8ACYQ4PHeyEkqKc5pxaJwGBh5BUIULFBwbWMCQsa15vXIAGJDYJAgbp4+AwCQegDSyKDIANYQFlgwoQb0rsdGpsuRrtEIsVDxACLAGFYhhYuus4Jt2m4Pl94rUIo1mm0OoQ-gCgSCNltnE1Wu0wDCzAB6AnIQAWEYAuT0Ap9GAbx9ANHqgBC3QA8CoBYOUAvwGALjlAF5epCJyDhyAAcjh+TxREN+OIdl1XMgIAAPLYtDC8UXIAA+yB4IDaMCcLWQ6koEGyUGQD0JxPJ1PpDMA98qAU7lOa8UMLRXBxS4PFK1crRObkLSbezAA6mgBG-WlO5AAWTgFkEAEEoNMLJKfNL1Y8jNziYA3PUAY2kR+wgBBlKDtJDOOMAGmQACFdsg496a2YgA)。
 
 泛型与联合/交叉类型的结合，绝大多数使用场景是做类型的合并。
 
@@ -274,6 +278,8 @@ type Concurrence<A, B> = A | B
 ```
 
 ### 2. 泛型与索引/映射类型的结合
+
+> 代码示例汇总：[Playground Link](https://www.typescriptlang.org/play/?#code/C4TwDgpgBAqgzhATgOQIYFtoF4oG8BQUUAdhhAFxRzCICWxA5oVKgxSQK7oBGSz6qADbtuAe1HDUxZgAtR3brQhwA-JWp1GAbQC6+AL758oSFABKEAI4daiCABN4SNJig4L12w4A8TlGQA+Y3BoC1R7UWJBED8XbHMIcMjo3wR-TCCTaFiyAEY3KAAFWgBjAGtU5zIAGigAclJMOqgAH3rWCDqg4NMAQXt7QsRRSERQbwAVWoBpKAgAD2AIYns4Khp6BlqANQCCiagAMjwoZi1CqHooaZ1KbdPDfHolxAAzVBLoIdF7DhLgPDMWj2SjELi8RDMRrsDSbZhgOifUHgviPLJFYa-f4AdVowBkABFaHASqIOMQATh+oNhqNxt8scBanV7MTSeTgHVamCeEhuqTiNQoAifn9gJQGWLcfiiSSyRSCgQiMDKLlqlCyJQ6gAZVBgYAjLnwxHsACc5vVRFZco5lAADAA6XIGIzogCyeu+YDgk1qMD2OCVUC0syuZQgIFErygE1usBdTwpSHenyKSDgkUBRGh6g2jGYHWRvMhaJCacQGeI0pkACFxJJiAUPWAvT7CunIrUxBJEsR+ZEhaNK9W6z2pBKO1W8bX673FRrMJR3oIEJaWGxKDQOBADEA)。
 
 泛型与索引/映射类型的结合，在类型编程中，还算是比较多的。
 
@@ -346,6 +352,8 @@ const personWithBoolean: PersonWithBoolean = {
 如上的 `MapProps` 工具类型会创建一个类型，将原始类型的每个属性映射到一个新的类型。
 
 ### 3. 泛型与条件类型的结合
+
+> 代码示例汇总：[Playground Link](https://www.typescriptlang.org/play/?#code/C4TwDgpgBAkgzgOQgNwgJwDwBUB8UC8UA2lgLpQQAewEAdgCZzG0rrkD8UwaArtAFxQAZgEMANnAgAoUJCgAlCHADMBWIlaYWqNHgD0err2mzoiuABY18JDowjaIfYdEST4M0oCs1jXYBGAPaBYhAOzsLiklIyHuoAgo7YeIQAjBTUdIxQWFAAZFAATFCc3HxQgq7RpgpKAGy+iSD2jhFl7nLmAOyNSdroEVUdnnAAHL3NQSFhtINR0rFy8ACqtADWtIEA7rTJajzrmzsZNAxMWFKc8E17VKfZ7VJQJZFuTxVGfFKV84sjAJy+VYbba7A4gnZtYx-WpwVIABiBh1BLScUAMr2qcXMqXShBWyJ2GFoPAAtv4BuiXL8pBjACVygDG0mEwWg0NCSADGwAAloFdvEADRQABCKSg8ROWSYwpeEsE-TQtMMgDvdJk1AAi3KEQnQdA5EAwgpFYoldylIpeCo+8SVUEAphFquIAYUCpLAoVJdGAhqFMrNZ3FYs12t1tH1PuNMRhErSUAAPkV41BVAmLDCZbGE8VUzEaiy2ZyeXzzNZWehC7z+b6Iuks0m0xqtTq0HqICXCMHm62I6KqcmYS63R6ve2oIP3RBPayexFlDEMXmy+yIFzK6PbQmABTpf3ZWuJ1MvdLyzQASg3UE3xV3TH32agVk4xRPOnPGK3qhvUDv9Zeqhf6BvoYW5WF+P6HpwVgAWg562o2IYtmGbZKGoF7bpKAbgQ+lqaB8qRAUmV4YXuSb3o+UBWoIhQER+xG3qRv6cJRyY0ZeoGZJhDEQRRuGCBYsFCAcq58lAHKuv43IsJuIiCHA3CSQA5kK-jymSFIwVAADe7wtsAPBoLQUAiFAADUUD+FIAC+uZxAAYkJAAKIhoCIpJMIQTkuZ6BYYKYgRCKJ4mSRAEREDJUByWginKap5JsDC9lhooekGVgcSEMl+m0GlkC+R4-mBeSwURJFikxByYgiHATAOeWInac8Ym0JFPBcoEaCbrQrkQLJ8m0EpRkKT1FFqegQqkuIw1TKEDinlp1nWTCtXsnyLrNWUbVoJ5rnuWOfItZt23eeWeWQAVy1wHyoVdZ6vVRf1QoiENsXqeNk2CNNMykEtdW0CyckOPqpYA0hOUGn5AUXVdfZQ7QQA)。
 
 泛型与条件类型的使用，使用频率是最高的，案例也是最多的。
 
@@ -453,6 +461,8 @@ class Person {
 type PersonConstructorParams = ConstructorParameters<typeof Person> // [name: string, age: number, male: boolean]
 type PersonInstance = InstanceType<typeof Person> // Person
 ```
+
+当然了，泛型跟如上多种类型的综合使用，也是可以演变成很多写法的，具体，后边再写篇文章单独唠唠。
 
 案例会持续更新！
 
