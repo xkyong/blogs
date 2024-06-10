@@ -3,15 +3,18 @@ import { h, onMounted, nextTick, watch } from 'vue'
 import { useRoute } from 'vitepress'
 import Theme from 'vitepress/theme'
 import mediumZoom from 'medium-zoom'
+
 import TwoSlashFloatingVue from 'vitepress-plugin-twoslash/client'
 import 'vitepress-plugin-twoslash/style.css'
 
-import type { EnhanceAppContext } from 'vitepress'
+import Giscus from '@giscus/vue'
 
 import './style.css'
 
 import Analysis from './components/Analysis.vue'
 import VPSwitchAppearance from './components/VPSwitchAppearance.vue'
+
+import type { EnhanceAppContext } from 'vitepress'
 
 export default {
   extends: Theme,
@@ -23,8 +26,8 @@ export default {
     })
   },
   enhanceApp({ app }: EnhanceAppContext) {
-    // @ts-expect-error
     app.use(TwoSlashFloatingVue)
+    app.component('Giscus', Giscus)
   },
   setup () {
     const route = useRoute()

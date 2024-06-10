@@ -491,3 +491,16 @@ Happy Coding!
 
 - [TypeScript 教程-TypeScript 泛型](https://wangdoc.com/typescript/generics)
 
+<Giscus
+  repo="XKyong/xkyong.github.io"
+  repo-id="R_kgDOJ_jjbw"
+  category="Announcements"
+  category-id="DIC_kwDOJ_jjb84Cf-jt"
+  mapping="title"
+  reactions-enabled="1"
+  emit-metadata="0"
+  input-position="top"
+  theme="preferred_color_scheme"
+  lang="zh-CN"
+  loading="lazy"
+/>

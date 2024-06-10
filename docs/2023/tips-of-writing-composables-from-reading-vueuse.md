@@ -445,3 +445,17 @@ Happy Coding!
 - [可组合的 Vue - Anthony Fu](https://antfu.me/posts/Composable-vue-vueconf-china-2021)
 - [VueUse-Best Practice](https://vueuse.org/guide/best-practice.html)
 - [VueUse-Guidelines](https://vueuse.org/guidelines.html)
+
+<Giscus
+  repo="XKyong/xkyong.github.io"
+  repo-id="R_kgDOJ_jjbw"
+  category="Announcements"
+  category-id="DIC_kwDOJ_jjb84Cf-jt"
+  mapping="title"
+  reactions-enabled="1"
+  emit-metadata="0"
+  input-position="top"
+  theme="preferred_color_scheme"
+  lang="zh-CN"
+  loading="lazy"
+/>

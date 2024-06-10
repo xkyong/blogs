@@ -425,3 +425,17 @@ console.log('App.vue', 37, '1000秒设置定时返回~')
 
 - [electron-vue官方中文文档](https://simulatedgreg.gitbooks.io/electron-vue/content/cn/)
 - [Electron-vue开发实战4——通过CI发布以及更新的方式](https://molunerfinn.com/electron-vue-5)
+
+<Giscus
+  repo="XKyong/xkyong.github.io"
+  repo-id="R_kgDOJ_jjbw"
+  category="Announcements"
+  category-id="DIC_kwDOJ_jjb84Cf-jt"
+  mapping="title"
+  reactions-enabled="1"
+  emit-metadata="0"
+  input-position="top"
+  theme="preferred_color_scheme"
+  lang="zh-CN"
+  loading="lazy"
+/>

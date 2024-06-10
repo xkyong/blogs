@@ -387,3 +387,17 @@ type Res26 = DeepExtractPromiseResolveType<Promise<Promise<Promise<true>>>> // t
 - [冴羽TypeScript教程-条件类型](https://ts.yayujs.com/handbook/ConditionalTypes.html)
 - [handbook-Conditional Types](https://www.typescriptlang.org/docs/handbook/2/conditional-types.html)
 - [Mastering infer in TypeScript](https://javascript.plainenglish.io/mastering-infer-in-typescript-6cf3f93cca86)
+
+<Giscus
+  repo="XKyong/xkyong.github.io"
+  repo-id="R_kgDOJ_jjbw"
+  category="Announcements"
+  category-id="DIC_kwDOJ_jjb84Cf-jt"
+  mapping="title"
+  reactions-enabled="1"
+  emit-metadata="0"
+  input-position="top"
+  theme="preferred_color_scheme"
+  lang="zh-CN"
+  loading="lazy"
+/>

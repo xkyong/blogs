@@ -486,3 +486,16 @@ http {
 - [使用 COOP 和 COEP“跨源隔离”网站](https://web.dev/coop-coep/)
 - [跨域隔离的启用指南](https://web.dev/cross-origin-isolation-guide/)
 
+<Giscus
+  repo="XKyong/xkyong.github.io"
+  repo-id="R_kgDOJ_jjbw"
+  category="Announcements"
+  category-id="DIC_kwDOJ_jjb84Cf-jt"
+  mapping="title"
+  reactions-enabled="1"
+  emit-metadata="0"
+  input-position="top"
+  theme="preferred_color_scheme"
+  lang="zh-CN"
+  loading="lazy"
+/>
