@@ -37,11 +37,22 @@ export default {
       mediumZoom('.main img', { background: 'var(--vp-c-bg)' })
     }
 
+    const insertGoogleSiteVerification = () => {
+      const head = document.head
+      const meta = document.createElement('meta')
+      meta.name = 'google-site-verification'
+      meta.content = 'cwzDQ0eceE4PEDQ3SD6XkroG5FA-eZeHa_zmBB_U-Lc'
+      head.appendChild(meta)
+    }
+
     watch(
       () => route.path,
       () => nextTick(() => initZoom())
     )
 
-    onMounted(() => initZoom())
+    onMounted(() => {
+      initZoom()
+      insertGoogleSiteVerification()
+    })
   }
 }
