@@ -1,4 +1,4 @@
-# 【翻译】Node.js worker 线程入门指南
+# [译] Node.js worker 线程入门指南
 
 > 原文地址：https://betterstack.com/community/guides/scaling-nodejs/nodejs-workers-explained/
 >

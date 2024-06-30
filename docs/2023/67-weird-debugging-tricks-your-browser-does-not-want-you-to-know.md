@@ -1,4 +1,4 @@
-# 【翻译】浏览器不想让你知道的67个怪异调试技巧
+# [译] 浏览器不想让你知道的67个怪异调试技巧
 
 > 原文地址：https://alan.norbauer.com/articles/browser-debugging-tricks
 

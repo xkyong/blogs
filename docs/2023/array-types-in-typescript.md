@@ -1,4 +1,4 @@
-# 【翻译】TypeScript 中的 Array 类型
+# [译] TypeScript 中的 Array 类型
 
 > 原文地址：https://tkdodo.eu/blog/array-types-in-type-script
 

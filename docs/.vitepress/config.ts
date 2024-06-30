@@ -32,15 +32,19 @@ export default defineConfig({
           // { text: '唠唠 TypeScript 中内置工具类型衍生的进阶用法', link: '/2024/advanced-usage-of-typescript-tool-types' },
           // { text: '分享几个好用的 Node.js cli 工具库', link: '/2024/my-own-useful-cli-tools-in-2024' },
           {
+            text: '[译] 为什么说，你在 TypeScript 中使用枚举是错误的',
+            link: '/2024/enum-typescript',
+          },
+          {
             text: '📖唠唠 TypeScript 类型编程中的泛型用法与案例实践',
             link: '/2024/ts-generics-and-practice',
           },
           {
-            text: '【翻译】Node.js worker 线程入门指南',
+            text: '[译] Node.js worker 线程入门指南',
             link: '/2024/nodejs-workers-explained',
           },
           {
-            text: '【翻译】__dirname 以 ES modules 方式回归 Node.js',
+            text: '[译] __dirname 以 ES modules 方式回归 Node.js',
             link: '/2024/dirname-node-js-es-modules',
           },
           {
@@ -48,7 +52,7 @@ export default defineConfig({
             link: '/2024/chrome-devtools-useful-tips',
           },
           {
-            text: '【翻译】如何使用 TypeScript、测试、GitHub Actions 和自动部署到 NPM 操作来发布 NPM 包',
+            text: '[译] 如何使用 TypeScript、测试、GitHub Actions 和自动部署到 NPM 操作来发布 NPM 包',
             link: '/2024/modern-javascript-library-starter',
           },
           {
@@ -62,7 +66,7 @@ export default defineConfig({
         text: '2023年',
         items: [
           {
-            text: '【翻译】像高手一样编写代码：编写代码的 5 个必知技巧',
+            text: '[译] 像高手一样编写代码：编写代码的 5 个必知技巧',
             link: '/2023/write-code-like-a-senior',
           },
           {
@@ -70,27 +74,27 @@ export default defineConfig({
             link: '/2023/tips-of-writing-composables-from-reading-vueuse',
           },
           {
-            text: '【翻译】浏览器不想让你知道的67个怪异调试技巧',
+            text: '[译] 浏览器不想让你知道的67个怪异调试技巧',
             link: '/2023/67-weird-debugging-tricks-your-browser-does-not-want-you-to-know',
           },
           {
-            text: '【翻译】让开发人员生活更美好的 8 条建议',
+            text: '[译] 让开发人员生活更美好的 8 条建议',
             link: '/2023/my-8-tips-for-a-better-life-as-a-developer',
           },
           {
-            text: '【翻译】TypeScript：停止使用 any 类型，一种特定场景下使用的类型',
+            text: '[译] TypeScript：停止使用 any 类型',
             link: '/2023/typescript-stop-using-any',
           },
           {
-            text: '【翻译】TypeScript 中的 Array 类型',
+            text: '[译] TypeScript 中的 Array 类型',
             link: '/2023/array-types-in-typescript',
           },
           {
-            text: '【翻译】一篇理解 Node.js 事件循环的完整可视化指南',
+            text: '[译] 一篇理解 Node.js 事件循环的完整可视化指南',
             link: '/2023/visual-guide-to-nodejs-event-loop',
           },
           {
-            text: '【翻译】CommonJS 正在破坏 JavaScript',
+            text: '[译] CommonJS 正在破坏 JavaScript',
             link: '/2023/commonjs-is-hurting-javascript',
           },
           {
@@ -117,6 +121,7 @@ export default defineConfig({
     ],
   },
   markdown: {
+    // @ts-expect-error
     codeTransformers: [transformerTwoslash()],
   },
 })

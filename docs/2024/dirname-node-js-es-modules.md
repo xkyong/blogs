@@ -1,4 +1,4 @@
-# __dirname 以 ES modules 方式回归 Node.js
+# [译] __dirname 以 ES modules 方式回归 Node.js
 
 > 原文地址：https://www.sonarsource.com/blog/dirname-node-js-es-modules/
 

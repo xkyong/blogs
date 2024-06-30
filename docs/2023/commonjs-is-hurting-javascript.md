@@ -1,4 +1,4 @@
-# 【翻译】CommonJS 正在破坏 JavaScript
+# [译] CommonJS 正在破坏 JavaScript
 
 > 原文地址：https://deno.com/blog/commonjs-is-hurting-javascript
 

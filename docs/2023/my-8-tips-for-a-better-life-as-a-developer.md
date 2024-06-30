@@ -1,4 +1,4 @@
-# 【翻译】让开发人员生活更美好的 8 条建议
+# [译] 让开发人员生活更美好的 8 条建议
 
 > 原文地址：https://dev.to/wraith/my-8-tips-for-a-better-life-as-a-developer-1hfg
 

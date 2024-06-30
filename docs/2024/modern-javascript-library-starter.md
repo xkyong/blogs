@@ -1,4 +1,4 @@
-# 【翻译】如何使用 TypeScript、测试、GitHub Actions 和自动部署到 NPM 操作来发布 NPM 包
+# [译] 如何使用 TypeScript、测试、GitHub Actions 和自动部署到 NPM 操作来发布 NPM 包
 
 > 原文地址：https://advancedweb.hu/modern-javascript-library-starter
 >

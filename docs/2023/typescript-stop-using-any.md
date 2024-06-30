@@ -1,4 +1,4 @@
-# 【翻译】TypeScript：停止使用 any 类型，一种特定场景下使用的类型
+# [译] TypeScript：停止使用 any 类型
 
 > 原文地址：https://thoughtbot.com/blog/typescript-stop-using-any-there-s-a-type-for-that
 

@@ -1,4 +1,4 @@
-# 【翻译】像高手一样编写代码：编写代码的 5 个必知技巧
+# [译] 像高手一样编写代码：编写代码的 5 个必知技巧
 
 > 原文地址：https://www.mensurdurakovic.com/write-code-like-a-senior-five-must-know-tips-for-crafting-code/
 
