@@ -32,6 +32,10 @@ export default defineConfig({
           // { text: '唠唠 TypeScript 中内置工具类型衍生的进阶用法', link: '/2024/advanced-usage-of-typescript-tool-types' },
           // { text: '分享几个好用的 Node.js cli 工具库', link: '/2024/my-own-useful-cli-tools-in-2024' },
           {
+            text: '[译] 为什么说，我对 Javascript 的未来保持乐观态度',
+            link: '/2024/why-im-optimistic-about-javascripts',
+          },
+          {
             text: '[译] 为什么说，你在 TypeScript 中使用枚举是错误的',
             link: '/2024/enum-typescript',
           },
