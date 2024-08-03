@@ -149,11 +149,7 @@ $ qnm lodash --no-remote
 
 ![截图_20240803105800](img/my-own-useful-cli-tools-in-2024/截图_20240803105800.png)
 
-`qnm lodash --no-remote` 是我日常使用比较多的命令，更多其他用法和使用场景，感兴趣可以自己多探索探索！
-
-
-
-
+`qnm --no-remote` 是我日常使用比较多的命令，更多其他用法和使用场景，感兴趣可以自己多探索探索！
 
 
 ## （三）总结
@@ -163,3 +159,16 @@ $ qnm lodash --no-remote
  工具库会持续更新，Happy Coding!
 
 
+<Giscus
+  repo="XKyong/xkyong.github.io"
+  repo-id="R_kgDOJ_jjbw"
+  category="Announcements"
+  category-id="DIC_kwDOJ_jjb84Cf-jt"
+  mapping="title"
+  reactions-enabled="1"
+  emit-metadata="0"
+  input-position="top"
+  theme="preferred_color_scheme"
+  lang="zh-CN"
+  loading="lazy"
+/>
