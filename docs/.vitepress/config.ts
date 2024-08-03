@@ -30,7 +30,7 @@ export default defineConfig({
         text: '2024年',
         items: [
           // { text: '唠唠 TypeScript 中内置工具类型衍生的进阶用法', link: '/2024/advanced-usage-of-typescript-tool-types' },
-          // { text: '分享几个好用的 Node.js cli 工具库', link: '/2024/my-own-useful-cli-tools-in-2024' },
+          { text: '🔥分享 2024 年一些好用的 Node.js Cli 工具库', link: '/2024/my-own-useful-cli-tools-in-2024' },
           {
             text: '[译] 为什么说，我对 Javascript 的未来保持乐观态度',
             link: '/2024/why-im-optimistic-about-javascripts',
@@ -60,7 +60,7 @@ export default defineConfig({
             link: '/2024/modern-javascript-library-starter',
           },
           {
-            text: '🔥分享 2024 年一些自用的工作效率 Boosting 的 Vscode 插件',
+            text: '🚀🔥2024 年效率提升值得试试的 Vscode 插件',
             link: '/2024/my-own-work-boosting-vscode-plugins-in-2024',
           },
           // { text: '唠唠我从 VueUse 源码中学到的 TypeScript 编写技巧', link: '/2024/tips-of-writing-typescript-from-reading-vueuse'}
