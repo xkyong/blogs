@@ -303,3 +303,16 @@ export type HttpStatusCode = TypeFrom<typeof HttpStatusCodes>;
 
 我希望这篇文章能让更多人受益，并帮助你在项目中优化 TypeScript 的使用。欢迎阅读评论或对 [我的 medium 文章](https://tduyng.medium.com/why-you-might-be-using-enums-in-typescript-wrong-6d9c5742db5a) 提供反馈。祝你编码愉快！
 
+<Giscus
+  repo="XKyong/xkyong.github.io"
+  repo-id="R_kgDOJ_jjbw"
+  category="Announcements"
+  category-id="DIC_kwDOJ_jjb84Cf-jt"
+  mapping="title"
+  reactions-enabled="1"
+  emit-metadata="0"
+  input-position="top"
+  theme="preferred_color_scheme"
+  lang="zh-CN"
+  loading="lazy"
+/>
