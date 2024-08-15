@@ -4,8 +4,8 @@ import { useRoute } from 'vitepress'
 import Theme from 'vitepress/theme'
 import mediumZoom from 'medium-zoom'
 
-import TwoSlashFloatingVue from 'vitepress-plugin-twoslash/client'
-import 'vitepress-plugin-twoslash/style.css'
+import TwoslashFloatingVue from '@shikijs/vitepress-twoslash/client'
+import '@shikijs/vitepress-twoslash/style.css'
 
 import Giscus from '@giscus/vue'
 
@@ -26,7 +26,7 @@ export default {
     })
   },
   enhanceApp({ app }: EnhanceAppContext) {
-    app.use(TwoSlashFloatingVue)
+    app.use(TwoslashFloatingVue)
     app.component('Giscus', Giscus)
   },
   setup () {
