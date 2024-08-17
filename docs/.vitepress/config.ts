@@ -30,6 +30,7 @@ export default defineConfig({
         text: '2024年',
         items: [
           // { text: '唠唠 TypeScript 中内置工具类型衍生的进阶用法', link: '/2024/advanced-usage-of-typescript-tool-types' },
+          { text: '[译] JavaScript 中内存泄漏的常见原因', link: '/2024/common-causes-of-memory-leaks-in-javascript' },
           { text: '🔥分享 2024 年一些好用的 Node.js Cli 工具库', link: '/2024/my-own-useful-cli-tools-in-2024' },
           {
             text: '[译] 为什么说，我对 Javascript 的未来保持乐观态度',
