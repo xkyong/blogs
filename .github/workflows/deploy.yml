@@ -1,40 +1,55 @@
-name: Deploy
+name: Deploy VitePress site to Pages
 
 on:
-  # Runs on pushes targeting the default branch
   push:
-    branches: ["main"]
+    branches: [main]
 
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 jobs:
-  deploy:
+  # 构建工作
+  build:
     runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v3
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      - name: Install dependencies
+        run: pnpm install
+      - name: Build with VitePress
+        run: pnpm docs:build
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs/.vitepress/dist
+
+  # 部署工作
+  deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    name: Deploy
     steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - uses: pnpm/action-setup@v2
-        with:
-          version: 7
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          cache: pnpm
-      - run: pnpm install
-      - name: Build
-        run: pnpm run docs:build
-      - uses: actions/configure-pages@v2
-      - uses: actions/upload-pages-artifact@v1
-        with:
-          path: docs/.vitepress/dist
-      - name: Deploy
+      - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4

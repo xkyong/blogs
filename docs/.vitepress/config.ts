@@ -4,7 +4,7 @@ import { transformerTwoslash } from '@shikijs/vitepress-twoslash'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: '壹小楷的博客',
-  base: '/blogs',
+  base: '/blogs/',
   description: 'a personal blog for marking something deserve marking.',
   appearance: false,
   lastUpdated: true,
