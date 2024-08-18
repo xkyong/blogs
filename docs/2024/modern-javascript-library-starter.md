@@ -344,11 +344,11 @@ $ git push --tags
 ![](img/modern-javascript-library-starter/2b01ae02fbf979fde51401b8c1d01495a768915f579635313d2f7c1bdfc4038e.png)
 
 <Giscus
-  repo="XKyong/xkyong.github.io"
-  repo-id="R_kgDOJ_jjbw"
+  repo="xkyong/blogs"
+  repo-id="R_kgDOMk5dyA"
   category="Announcements"
-  category-id="DIC_kwDOJ_jjb84Cf-jt"
-  mapping="title"
+  category-id="DIC_kwDOMk5dyM4ChwJe"
+  mapping="pathname"
   reactions-enabled="1"
   emit-metadata="0"
   input-position="top"

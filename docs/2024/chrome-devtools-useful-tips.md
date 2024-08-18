@@ -50,7 +50,7 @@ Sources 面板中启用 `Group by Authored/Deployed` 设置可先查看原始源
 
 ![](img/chrome-devtools-useful-tips/截图_20240316113057.gif)
 
-更多内容详看我的另 1 篇文章：[【翻译】浏览器不想让你知道的67个怪异调试技巧-检查难以捉摸的元素](https://xkyong.github.io/2023/67-weird-debugging-tricks-your-browser-does-not-want-you-to-know.html#%E6%A3%80%E6%9F%A5%E9%9A%BE%E4%BB%A5%E6%8D%89%E6%91%B8%E7%9A%84%E5%85%83%E7%B4%A0)。
+更多内容详看我的另 1 篇文章：[【翻译】浏览器不想让你知道的67个怪异调试技巧-检查难以捉摸的元素](https://xkyong.github.io/blogs/2023/67-weird-debugging-tricks-your-browser-does-not-want-you-to-know.html#%E6%A3%80%E6%9F%A5%E9%9A%BE%E4%BB%A5%E6%8D%89%E6%91%B8%E7%9A%84%E5%85%83%E7%B4%A0)。
 
 ### Elements/Sources 面板：进阶断点操作调试程序代码
 
@@ -117,10 +117,10 @@ Recorder 面板功能还是比较强大的，更多内容，详看：[录制、�
 Happy Coding!
 
 <Giscus
-  repo="XKyong/xkyong.github.io"
-  repo-id="R_kgDOJ_jjbw"
+  repo="xkyong/blogs"
+  repo-id="R_kgDOMk5dyA"
   category="Announcements"
-  category-id="DIC_kwDOJ_jjb84Cf-jt"
+  category-id="DIC_kwDOMk5dyM4ChwJe"
   mapping="title"
   reactions-enabled="1"
   emit-metadata="0"

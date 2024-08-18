@@ -173,10 +173,10 @@ Bun 已经实现了 `import.meta.dir` 和 `import.meta.path`，它们是等价�
 至少，我们现在可以删除一些模板代码，转而使用 `import.meta.dirname`。
 
 <Giscus
-  repo="XKyong/xkyong.github.io"
-  repo-id="R_kgDOJ_jjbw"
+  repo="xkyong/blogs"
+  repo-id="R_kgDOMk5dyA"
   category="Announcements"
-  category-id="DIC_kwDOJ_jjb84Cf-jt"
+  category-id="DIC_kwDOMk5dyM4ChwJe"
   mapping="title"
   reactions-enabled="1"
   emit-metadata="0"

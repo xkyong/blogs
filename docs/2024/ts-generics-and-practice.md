@@ -6,7 +6,7 @@
 
 下边结合自己看过和实际项目中类型编程实践后的体验，总结汇总下 TypeScript 类型编程中泛型（Generics）的一些实用技巧和案例实践。
 
-本篇是继 [唠唠 TypeScript 分布式条件类型与 infer 及应用](https://xkyong.github.io/2023/ts-distributive-conditional-type-and-infer.html) 之后的第2篇关于 TypeScript 内容的文章，更多也是对自己阶段学习成果的整理输出，也希望文中提到的一些内容或思路能够给大家些借鉴。
+本篇是继 [唠唠 TypeScript 分布式条件类型与 infer 及应用](https://xkyong.github.io/blogs/2023/ts-distributive-conditional-type-and-infer.html) 之后的第2篇关于 TypeScript 内容的文章，更多也是对自己阶段学习成果的整理输出，也希望文中提到的一些内容或思路能够给大家些借鉴。
 
 
 
@@ -378,7 +378,7 @@ type Res10 = IsUnknown<any> // false
 type Res11 = IsUnknown<number> // false
 ```
 
-上述利用泛型跟条件类型的结合，封装了3个分别用来判断 `never`、`any` 和 `unknown` 类型的工具类型，而关于这3个工具类型的分析，可以看看我的另外1篇文章：[唠唠 TypeScript 分布式条件类型与 infer 及应用-分布式条件类型](https://xkyong.github.io/2023/ts-distributive-conditional-type-and-infer.html#_2-%E5%88%86%E5%B8%83%E5%BC%8F%E6%9D%A1%E4%BB%B6%E7%B1%BB%E5%9E%8B)。
+上述利用泛型跟条件类型的结合，封装了3个分别用来判断 `never`、`any` 和 `unknown` 类型的工具类型，而关于这3个工具类型的分析，可以看看我的另外1篇文章：[唠唠 TypeScript 分布式条件类型与 infer 及应用-分布式条件类型](https://xkyong.github.io/blogs/2023/ts-distributive-conditional-type-and-infer.html#_2-%E5%88%86%E5%B8%83%E5%BC%8F%E6%9D%A1%E4%BB%B6%E7%B1%BB%E5%9E%8B)。
 
 ```typescript twoslash
 // 交集
@@ -442,7 +442,7 @@ type InstanceType<T extends ClassType> = T extends abstract new (
   : any
 ```
 
-如上代码配合使用了泛型、条件类型和 `infer` 关键字，来完成类型的封装。关于 `infer` 关键字的介绍，可以看看我的另外1篇文章：[唠唠 TypeScript 分布式条件类型与 infer 及应用-infer 介绍](https://xkyong.github.io/2023/ts-distributive-conditional-type-and-infer.html#_1-infer%E4%BB%8B%E7%BB%8D)。
+如上代码配合使用了泛型、条件类型和 `infer` 关键字，来完成类型的封装。关于 `infer` 关键字的介绍，可以看看我的另外1篇文章：[唠唠 TypeScript 分布式条件类型与 infer 及应用-infer 介绍](https://xkyong.github.io/blogs/2023/ts-distributive-conditional-type-and-infer.html#_1-infer%E4%BB%8B%E7%BB%8D)。
 
 如上几个内置工具类型对应的使用示例如下：
 
@@ -492,10 +492,10 @@ Happy Coding!
 - [TypeScript 教程-TypeScript 泛型](https://wangdoc.com/typescript/generics)
 
 <Giscus
-  repo="XKyong/xkyong.github.io"
-  repo-id="R_kgDOJ_jjbw"
+  repo="xkyong/blogs"
+  repo-id="R_kgDOMk5dyA"
   category="Announcements"
-  category-id="DIC_kwDOJ_jjb84Cf-jt"
+  category-id="DIC_kwDOMk5dyM4ChwJe"
   mapping="title"
   reactions-enabled="1"
   emit-metadata="0"

@@ -130,10 +130,10 @@ export default function handler(req: Request) {
 **对于网络开发者来说，这是一个多么不可思议的时代。**
 
 <Giscus
-  repo="XKyong/xkyong.github.io"
-  repo-id="R_kgDOJ_jjbw"
+  repo="xkyong/blogs"
+  repo-id="R_kgDOMk5dyA"
   category="Announcements"
-  category-id="DIC_kwDOJ_jjb84Cf-jt"
+  category-id="DIC_kwDOMk5dyM4ChwJe"
   mapping="title"
   reactions-enabled="1"
   emit-metadata="0"

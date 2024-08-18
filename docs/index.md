@@ -10,7 +10,7 @@
 
 总结来讲，写博客的好处还是蛮多的，希望喜欢记录的小伙伴可以多多搞起来！
 
-当然，记录编写的内容会尽量做到准确，但难免会有些错误，也欢迎各位大佬勘误，能够在 [issue](https://github.com/XKyong/xkyong.github.io/issues) 中指出那就更好了~
+当然，记录编写的内容会尽量做到准确，但难免会有些错误，也欢迎各位大佬勘误，能够在 [issue](https://github.com/xkyong/blogs/issues) 中指出那就更好了~
 
 ## 博客内容
 

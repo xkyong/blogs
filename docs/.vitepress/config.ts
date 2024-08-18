@@ -123,7 +123,7 @@ export default defineConfig({
       },
     ],
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/XKyong/xkyong.github.io' },
+      { icon: 'github', link: 'https://github.com/xkyong/blogs' },
     ],
   },
   markdown: {

@@ -660,10 +660,10 @@ worker 线程提高了 Node.js 处理 CPU 密集型任务的能力，标志着�
 感谢你的阅读，祝你编码愉快！
 
 <Giscus
-  repo="XKyong/xkyong.github.io"
-  repo-id="R_kgDOJ_jjbw"
+  repo="xkyong/blogs"
+  repo-id="R_kgDOMk5dyA"
   category="Announcements"
-  category-id="DIC_kwDOJ_jjb84Cf-jt"
+  category-id="DIC_kwDOMk5dyM4ChwJe"
   mapping="title"
   reactions-enabled="1"
   emit-metadata="0"
