@@ -6,7 +6,7 @@ export default defineConfig({
   title: '壹小楷的博客',
   base: '/blogs/',
   description: 'a personal blog for marking something deserve marking.',
-  appearance: false,
+  appearance: true,
   lastUpdated: true,
   themeConfig: {
     lastUpdated: {

@@ -10,21 +10,13 @@ import '@shikijs/vitepress-twoslash/style.css'
 import Giscus from '@giscus/vue'
 
 import './style.css'
-
-import Analysis from './components/Analysis.vue'
-import VPSwitchAppearance from './components/VPSwitchAppearance.vue'
+import MyLayout from './components/MyLayout.vue'
 
 import type { EnhanceAppContext } from 'vitepress'
 
 export default {
   extends: Theme,
-  Layout: () => {
-    return h(Theme.Layout, null, {
-      // https://vitepress.dev/guide/extending-default-theme#layout-slots
-      'nav-bar-content-before': () => h(Analysis),
-      'nav-bar-content-after': () => h(VPSwitchAppearance)
-    })
-  },
+  Layout: MyLayout,
   enhanceApp({ app }: EnhanceAppContext) {
     app.use(TwoslashFloatingVue)
     app.component('Giscus', Giscus)
