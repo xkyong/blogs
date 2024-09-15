@@ -14,3 +14,17 @@
 尤其推荐大家看下 `50 TypeScript F*ck Ups Book` 这本电子书~
 
 Happy Coding!
+
+<Giscus
+  repo="xkyong/blogs"
+  repo-id="R_kgDOMk5dyA"
+  category="Announcements"
+  category-id="DIC_kwDOMk5dyM4ChwJe"
+  mapping="title"
+  reactions-enabled="1"
+  emit-metadata="0"
+  input-position="top"
+  theme="preferred_color_scheme"
+  lang="zh-CN"
+  loading="lazy"
+/>
