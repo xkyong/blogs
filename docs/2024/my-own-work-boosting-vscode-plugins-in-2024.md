@@ -16,6 +16,10 @@ ok，现在开始！
 
 不过，现在有更好的操作方式，即根据 DTO 的结构自动生成参数类型结构，不过要借助 [To Ts Type](https://marketplace.visualstudio.com/items?itemName=simonhe.to-ts-type) 这个插件来完成。
 
+:::tip
+最近发现一个 JSON 2 TypeScript 网站，也能实现类似功能：https://ts.hamm.cn/
+:::
+
 下边以 [swagger.io](https://editor.swagger.io/) 上边下图这个 post 接口为例，演示下如何 To Ts Type 这个插件。
 
 ![image-20240127230533508](img/my-own-work-boosting-vscode-plugins-in-2024/image-20240127230533508.png)
