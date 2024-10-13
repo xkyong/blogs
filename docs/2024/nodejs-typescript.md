@@ -47,7 +47,7 @@ server started on port: 3000
 Exchange rates cache updated
 ```
 
-请在浏览器中访问 http://localhost:3000 查看应用程序的运行情况：
+请在浏览器中访问 `http://localhost:3000` 查看应用程序的运行情况：
 
 ![截图_20241013100222](img/nodejs-typescript/截图_20241013100222.png)
 
