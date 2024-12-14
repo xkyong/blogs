@@ -1,6 +1,6 @@
 # [译] Node.js 中集成 TypeScript 入门指南
 
-> 原文地址：https://betterstack.com/community/guides/scaling-nodejs/nodejs-workers-explained/
+> 原文地址：https://betterstack.com/community/guides/scaling-nodejs/nodejs-typescript
 
 [TypeScript](https://www.typescriptlang.org/) 是 JavaScript 语法的扩展，为该语言增加了类型安全和其他功能。自 2011 年首次亮相以来，TypeScript 不断受到欢迎，并越来越多地用于对可靠性要求极高的各类项目。[Deno](https://deno.land/) 和 [Bun](https://bun.sh/) 等新兴 JavaScript 运行时都内置了 TypeScript 支持，而 Node.js 却没有。因此，你需要投入额外的精力在 Node.js 运行时中集成类型检查。本文将教你如何做到这一点！
 
