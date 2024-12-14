@@ -40,9 +40,13 @@ Sources 面板中启用 `Group by Authored/Deployed` 设置可先查看原始源
 
 ![](img/chrome-devtools-useful-tips/截图_20240316112759.gif)
 
-> 2024年04月17号20:25更新：如果你的 Chrome 浏览器更新到最新的 123.0.6312.123 版本，那么，`Emulate a focused page` 功能还可以在如下位置开启：
+:::tip
+
+2024年04月17号20:25更新：如果你的 Chrome 浏览器更新到最新的 123.0.6312.123 版本，那么，`Emulate a focused page` 功能还可以在如下位置开启：
 
 ![image-20240417203008831](img/chrome-devtools-useful-tips/image-20240417203008831.png)
+
+:::
 
 详细可查看文章：[模拟聚焦的网页](https://developer.chrome.com/docs/devtools/rendering/apply-effects?hl=zh-cn)。
 
