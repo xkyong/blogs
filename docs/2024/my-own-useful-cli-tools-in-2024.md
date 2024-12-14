@@ -50,6 +50,18 @@ sayHello('kai')
 
 关于 tsx 的更多介绍，详见：https://tsx.is/
 
+::: tip 
+
+ 2024年12月14号10点更新：Node 22 版本引入了 `--experimental-transform-types` ，让我们可以直接在 Node 环境中直接运行 ts 代码：
+
+![截图_20241214102422](img/my-own-useful-cli-tools-in-2024/截图_20241214102422.png)
+
+详情见：[Node.js can run TypeScript](https://samthor.au/2024/node-run-typescript/)。
+
+:::
+
+
+
 ### 3. [http-server](https://www.npmjs.com/package/http-server)
 
 http-server 是一款简单的零配置命令行静态 HTTP 服务器工具库。日常开发过程中，我除了用来作为快速启动技术预研测试的 Demo 程序外，我还用它来传输文件（在同个局域网下，pc端 -> 移动端），几乎所有的文件都支持，都能传输，而且速度极快，只需要在想传输的目录下运行 `http-server` 命令，然后手机端输入启动的 url，就可以看到类似如下的界面：
