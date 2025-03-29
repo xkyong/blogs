@@ -28,6 +28,12 @@ export default defineConfig({
     ],
     sidebar: [
       {
+        text: '2025年',
+        items: [
+          { text: '[译] 理解 Node.js AbortController 的完整指南', link: '/2025/understanding-abortcontroller' },
+        ]
+      },
+      {
         text: '2024年',
         items: [
           // { text: '唠唠 TypeScript 中内置工具类型衍生的进阶用法', link: '/2024/advanced-usage-of-typescript-tool-types' },
