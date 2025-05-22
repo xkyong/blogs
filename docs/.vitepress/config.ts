@@ -10,7 +10,7 @@ export default defineConfig({
   lastUpdated: true,
   themeConfig: {
     outline: {
-      level: [3, 4],
+      level: [2, 3],
     },
     lastUpdated: {
       text: '最后更新时间',
