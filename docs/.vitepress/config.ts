@@ -9,6 +9,9 @@ export default defineConfig({
   appearance: true,
   lastUpdated: true,
   themeConfig: {
+    outline: {
+      level: [3, 4],
+    },
     lastUpdated: {
       text: '最后更新时间',
       formatOptions: {
