@@ -33,6 +33,7 @@ export default defineConfig({
       {
         text: '2025年',
         items: [
+          { text: '[译] 反待办清单', link: '/2025/the-anti-to-do-list' },
           { text: '[译] 理解 Node.js AbortController 的完整指南', link: '/2025/understanding-abortcontroller' },
         ]
       },
