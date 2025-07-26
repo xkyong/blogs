@@ -1,4 +1,4 @@
-# [译] 一篇理解Node.js事件循环的完整可视化指南
+# [译] Node.js 事件循环完全可视化指南
 
 > 原文地址：https://www.builder.io/blog/visual-guide-to-nodejs-event-loop
 

@@ -33,8 +33,9 @@ export default defineConfig({
       {
         text: '2025年',
         items: [
+          { text: '[译] Zod 完全指南', link: '/2025/zod-explained' },
           { text: '[译] 反待办清单', link: '/2025/the-anti-to-do-list' },
-          { text: '[译] 理解 Node.js AbortController 的完整指南', link: '/2025/understanding-abortcontroller' },
+          { text: '[译] Node.js AbortController 完全指南', link: '/2025/understanding-abortcontroller' },
         ]
       },
       {
@@ -109,7 +110,7 @@ export default defineConfig({
             link: '/2023/array-types-in-typescript',
           },
           {
-            text: '[译] 一篇理解 Node.js 事件循环的完整可视化指南',
+            text: '[译] Node.js 事件循环完全可视化指南',
             link: '/2023/visual-guide-to-nodejs-event-loop',
           },
           {

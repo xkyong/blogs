@@ -1,4 +1,4 @@
-# [译] 理解 Node.js AbortController 的完整指南
+# [译] Node.js AbortController 完全指南
 
 > 原文地址：https://betterstack.com/community/guides/scaling-nodejs/understanding-abortcontroller/
 
