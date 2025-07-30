@@ -155,11 +155,11 @@ $ npm run dev
 Valid user data: { name: 'Alice', age: 25, email: 'alice@example.com' }
 ```
 
-现在你已经知道如何开始使用 Zod，你将在 Zod 中自定义验证。
+现在你已经知道如何开始使用 Zod 了，接下来你将学习如何在 Zod 中自定义验证。
 
 
 
-## 自定义 Zod 验证器
+## 自定义 Zod 验证
 
 Zod 提供了一套丰富的内置验证工具，让你可以执行基本类型检查之外的约束。你可以通过添加条件、细化值或串连多个验证规则来定制模式。
 
@@ -186,11 +186,11 @@ export default UserSchema;
 
 以下是每个约束的作用：
 
-- `.min(3, "Message")`： 确保名称至少有 3 个字符。
-- `.int()`： 确保年龄为整数： 确保年龄是整数。
-- `.positive("Message")`： 确保年龄为正数。
-- `.email("Message")`： 确保电子邮件格式有效。
-- `.min(8, "信息")`： 确保密码长度至少为 8 个字符。
+- `.min(3, "Message")`： 确保 `name` 至少有 3 个字符。
+- `.int()`： 确保 `age` 为整数。
+- `.positive("Message")`： 确保 `age` 为正数。
+- `.email("Message")`： 确保 `email` 格式有效。
+- `.min(8, "Message")`： 确保 `password` 长度至少为 8 个字符。
 
 要测试这些限制条件，请修改 `index.ts` 文件以包含无效数据：
 
